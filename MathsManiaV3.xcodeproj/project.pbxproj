@@ -1,0 +1,470 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA7019F0259DFBF90000A3DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7019EF259DFBF90000A3DA /* AppDelegate.swift */; };
+		CA7019F2259DFBF90000A3DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7019F1259DFBF90000A3DA /* ViewController.swift */; };
+		CA7019F5259DFBF90000A3DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7019F3259DFBF90000A3DA /* Main.storyboard */; };
+		CA7019F7259DFBFA0000A3DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA7019F6259DFBFA0000A3DA /* Assets.xcassets */; };
+		CA7019FA259DFBFA0000A3DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7019F8259DFBFA0000A3DA /* LaunchScreen.storyboard */; };
+		CA701A05259DFBFA0000A3DA /* MathsManiaV3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA701A04259DFBFA0000A3DA /* MathsManiaV3Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA701A01259DFBFA0000A3DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA7019E4259DFBF90000A3DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA7019EB259DFBF90000A3DA;
+			remoteInfo = MathsManiaV3;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA7019EC259DFBF90000A3DA /* MathsManiaV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathsManiaV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA7019EF259DFBF90000A3DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CA7019F1259DFBF90000A3DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA7019F4259DFBF90000A3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA7019F6259DFBFA0000A3DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA7019F9259DFBFA0000A3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA7019FB259DFBFA0000A3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA701A00259DFBFA0000A3DA /* MathsManiaV3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathsManiaV3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA701A04259DFBFA0000A3DA /* MathsManiaV3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathsManiaV3Tests.swift; sourceTree = "<group>"; };
+		CA701A06259DFBFA0000A3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA7019E9259DFBF90000A3DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA7019FD259DFBFA0000A3DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA7019E3259DFBF90000A3DA = {
+			isa = PBXGroup;
+			children = (
+				CA7019EE259DFBF90000A3DA /* MathsManiaV3 */,
+				CA701A03259DFBFA0000A3DA /* MathsManiaV3Tests */,
+				CA7019ED259DFBF90000A3DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA7019ED259DFBF90000A3DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA7019EC259DFBF90000A3DA /* MathsManiaV3.app */,
+				CA701A00259DFBFA0000A3DA /* MathsManiaV3Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA7019EE259DFBF90000A3DA /* MathsManiaV3 */ = {
+			isa = PBXGroup;
+			children = (
+				CA7019EF259DFBF90000A3DA /* AppDelegate.swift */,
+				CA7019F1259DFBF90000A3DA /* ViewController.swift */,
+				CA7019F3259DFBF90000A3DA /* Main.storyboard */,
+				CA7019F6259DFBFA0000A3DA /* Assets.xcassets */,
+				CA7019F8259DFBFA0000A3DA /* LaunchScreen.storyboard */,
+				CA7019FB259DFBFA0000A3DA /* Info.plist */,
+			);
+			path = MathsManiaV3;
+			sourceTree = "<group>";
+		};
+		CA701A03259DFBFA0000A3DA /* MathsManiaV3Tests */ = {
+			isa = PBXGroup;
+			children = (
+				CA701A04259DFBFA0000A3DA /* MathsManiaV3Tests.swift */,
+				CA701A06259DFBFA0000A3DA /* Info.plist */,
+			);
+			path = MathsManiaV3Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA7019EB259DFBF90000A3DA /* MathsManiaV3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA701A09259DFBFA0000A3DA /* Build configuration list for PBXNativeTarget "MathsManiaV3" */;
+			buildPhases = (
+				CA7019E8259DFBF90000A3DA /* Sources */,
+				CA7019E9259DFBF90000A3DA /* Frameworks */,
+				CA7019EA259DFBF90000A3DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MathsManiaV3;
+			productName = MathsManiaV3;
+			productReference = CA7019EC259DFBF90000A3DA /* MathsManiaV3.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA7019FF259DFBFA0000A3DA /* MathsManiaV3Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA701A0C259DFBFA0000A3DA /* Build configuration list for PBXNativeTarget "MathsManiaV3Tests" */;
+			buildPhases = (
+				CA7019FC259DFBFA0000A3DA /* Sources */,
+				CA7019FD259DFBFA0000A3DA /* Frameworks */,
+				CA7019FE259DFBFA0000A3DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA701A02259DFBFA0000A3DA /* PBXTargetDependency */,
+			);
+			name = MathsManiaV3Tests;
+			productName = MathsManiaV3Tests;
+			productReference = CA701A00259DFBFA0000A3DA /* MathsManiaV3Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA7019E4259DFBF90000A3DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "Josh Manik";
+				TargetAttributes = {
+					CA7019EB259DFBF90000A3DA = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					CA7019FF259DFBFA0000A3DA = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = CA7019EB259DFBF90000A3DA;
+					};
+				};
+			};
+			buildConfigurationList = CA7019E7259DFBF90000A3DA /* Build configuration list for PBXProject "MathsManiaV3" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA7019E3259DFBF90000A3DA;
+			productRefGroup = CA7019ED259DFBF90000A3DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA7019EB259DFBF90000A3DA /* MathsManiaV3 */,
+				CA7019FF259DFBFA0000A3DA /* MathsManiaV3Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA7019EA259DFBF90000A3DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA7019FA259DFBFA0000A3DA /* LaunchScreen.storyboard in Resources */,
+				CA7019F7259DFBFA0000A3DA /* Assets.xcassets in Resources */,
+				CA7019F5259DFBF90000A3DA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA7019FE259DFBFA0000A3DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA7019E8259DFBF90000A3DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA7019F2259DFBF90000A3DA /* ViewController.swift in Sources */,
+				CA7019F0259DFBF90000A3DA /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA7019FC259DFBFA0000A3DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA701A05259DFBFA0000A3DA /* MathsManiaV3Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA701A02259DFBFA0000A3DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA7019EB259DFBF90000A3DA /* MathsManiaV3 */;
+			targetProxy = CA701A01259DFBFA0000A3DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA7019F3259DFBF90000A3DA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA7019F4259DFBF90000A3DA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CA7019F8259DFBFA0000A3DA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA7019F9259DFBFA0000A3DA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA701A07259DFBFA0000A3DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CA701A08259DFBFA0000A3DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA701A0A259DFBFA0000A3DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A392AU4DR;
+				INFOPLIST_FILE = MathsManiaV3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA701A0B259DFBFA0000A3DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A392AU4DR;
+				INFOPLIST_FILE = MathsManiaV3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA701A0D259DFBFA0000A3DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A392AU4DR;
+				INFOPLIST_FILE = MathsManiaV3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MathsManiaV3.app/MathsManiaV3";
+			};
+			name = Debug;
+		};
+		CA701A0E259DFBFA0000A3DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8A392AU4DR;
+				INFOPLIST_FILE = MathsManiaV3Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MathsManiaV3.app/MathsManiaV3";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA7019E7259DFBF90000A3DA /* Build configuration list for PBXProject "MathsManiaV3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA701A07259DFBFA0000A3DA /* Debug */,
+				CA701A08259DFBFA0000A3DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA701A09259DFBFA0000A3DA /* Build configuration list for PBXNativeTarget "MathsManiaV3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA701A0A259DFBFA0000A3DA /* Debug */,
+				CA701A0B259DFBFA0000A3DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA701A0C259DFBFA0000A3DA /* Build configuration list for PBXNativeTarget "MathsManiaV3Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA701A0D259DFBFA0000A3DA /* Debug */,
+				CA701A0E259DFBFA0000A3DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA7019E4259DFBF90000A3DA /* Project object */;
+}
