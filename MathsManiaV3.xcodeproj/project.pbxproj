@@ -3,16 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA030B7225E0056F0031D832 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA030B7025E0056F0031D832 /* TableViewCell.swift */; };
+		CA030B7325E0056F0031D832 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA030B7125E0056F0031D832 /* TableViewCell.xib */; };
+		CA38877C25DD4798000A6F91 /* LocationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */; };
+		CA68448725D1F62300B2063F /* popupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68448625D1F62300B2063F /* popupViewController.swift */; };
 		CA7019F0259DFBF90000A3DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7019EF259DFBF90000A3DA /* AppDelegate.swift */; };
-		CA7019F2259DFBF90000A3DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7019F1259DFBF90000A3DA /* ViewController.swift */; };
 		CA7019F5259DFBF90000A3DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7019F3259DFBF90000A3DA /* Main.storyboard */; };
 		CA7019F7259DFBFA0000A3DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA7019F6259DFBFA0000A3DA /* Assets.xcassets */; };
-		CA7019FA259DFBFA0000A3DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA7019F8259DFBFA0000A3DA /* LaunchScreen.storyboard */; };
 		CA701A05259DFBFA0000A3DA /* MathsManiaV3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA701A04259DFBFA0000A3DA /* MathsManiaV3Tests.swift */; };
+		CA701A10259DFCDB0000A3DA /* mathsManiaFrontpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA701A0F259DFCDB0000A3DA /* mathsManiaFrontpage.swift */; };
+		CA701A1225A617F80000A3DA /* ADAM.CGPRO.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA701A1125A617F80000A3DA /* ADAM.CGPRO.otf */; };
+		CA701A1425A61AB10000A3DA /* mathsManiaSoloMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA701A1325A61AB10000A3DA /* mathsManiaSoloMode.swift */; };
+		CAD4E2A125DAE12800546FD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */; };
+		CAD4E2AA25DAE45600546FD9 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD4E2A925DAE45600546FD9 /* GameController.framework */; };
+		CAD4E2C025DBEAB100546FD9 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */; };
+		CAD4E2C825DC310600546FD9 /* counties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD4E2C725DC310600546FD9 /* counties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +35,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA030B7025E0056F0031D832 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CA030B7125E0056F0031D832 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopupViewController.swift; sourceTree = "<group>"; };
+		CA68448625D1F62300B2063F /* popupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewController.swift; sourceTree = "<group>"; };
 		CA7019EC259DFBF90000A3DA /* MathsManiaV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathsManiaV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA7019EF259DFBF90000A3DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CA7019F1259DFBF90000A3DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CA7019F4259DFBF90000A3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CA7019F6259DFBFA0000A3DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CA7019F9259DFBFA0000A3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA7019FB259DFBFA0000A3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA701A00259DFBFA0000A3DA /* MathsManiaV3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MathsManiaV3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA701A04259DFBFA0000A3DA /* MathsManiaV3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathsManiaV3Tests.swift; sourceTree = "<group>"; };
 		CA701A06259DFBFA0000A3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA701A0F259DFCDB0000A3DA /* mathsManiaFrontpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathsManiaFrontpage.swift; sourceTree = "<group>"; };
+		CA701A1125A617F80000A3DA /* ADAM.CGPRO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ADAM.CGPRO.otf; path = "../../../../Downloads/ADAMCGPRO - SHRENIK-2/Font_Files_ADAM_CG_Pro/ADAM.CGPRO.otf"; sourceTree = "<group>"; };
+		CA701A1325A61AB10000A3DA /* mathsManiaSoloMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathsManiaSoloMode.swift; sourceTree = "<group>"; };
+		CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CAD4E2A925DAE45600546FD9 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
+		CAD4E2C725DC310600546FD9 /* counties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAD4E2AA25DAE45600546FD9 /* GameController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +81,7 @@
 				CA7019EE259DFBF90000A3DA /* MathsManiaV3 */,
 				CA701A03259DFBFA0000A3DA /* MathsManiaV3Tests */,
 				CA7019ED259DFBF90000A3DA /* Products */,
+				CAD4E2A825DAE45600546FD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,12 +97,20 @@
 		CA7019EE259DFBF90000A3DA /* MathsManiaV3 */ = {
 			isa = PBXGroup;
 			children = (
+				CA701A1125A617F80000A3DA /* ADAM.CGPRO.otf */,
 				CA7019EF259DFBF90000A3DA /* AppDelegate.swift */,
-				CA7019F1259DFBF90000A3DA /* ViewController.swift */,
+				CA030B7025E0056F0031D832 /* TableViewCell.swift */,
+				CA030B7125E0056F0031D832 /* TableViewCell.xib */,
 				CA7019F3259DFBF90000A3DA /* Main.storyboard */,
+				CA701A1325A61AB10000A3DA /* mathsManiaSoloMode.swift */,
+				CA68448625D1F62300B2063F /* popupViewController.swift */,
+				CA701A0F259DFCDB0000A3DA /* mathsManiaFrontpage.swift */,
 				CA7019F6259DFBFA0000A3DA /* Assets.xcassets */,
-				CA7019F8259DFBFA0000A3DA /* LaunchScreen.storyboard */,
 				CA7019FB259DFBFA0000A3DA /* Info.plist */,
+				CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */,
+				CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */,
+				CAD4E2C725DC310600546FD9 /* counties.swift */,
+				CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */,
 			);
 			path = MathsManiaV3;
 			sourceTree = "<group>";
@@ -94,6 +122,14 @@
 				CA701A06259DFBFA0000A3DA /* Info.plist */,
 			);
 			path = MathsManiaV3Tests;
+			sourceTree = "<group>";
+		};
+		CAD4E2A825DAE45600546FD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAD4E2A925DAE45600546FD9 /* GameController.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +190,7 @@
 				};
 			};
 			buildConfigurationList = CA7019E7259DFBF90000A3DA /* Build configuration list for PBXProject "MathsManiaV3" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -177,8 +213,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA7019FA259DFBFA0000A3DA /* LaunchScreen.storyboard in Resources */,
 				CA7019F7259DFBFA0000A3DA /* Assets.xcassets in Resources */,
+				CA030B7325E0056F0031D832 /* TableViewCell.xib in Resources */,
+				CA701A1225A617F80000A3DA /* ADAM.CGPRO.otf in Resources */,
+				CAD4E2A125DAE12800546FD9 /* Launch Screen.storyboard in Resources */,
 				CA7019F5259DFBF90000A3DA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,8 +235,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA7019F2259DFBF90000A3DA /* ViewController.swift in Sources */,
+				CA38877C25DD4798000A6F91 /* LocationPopupViewController.swift in Sources */,
+				CA030B7225E0056F0031D832 /* TableViewCell.swift in Sources */,
 				CA7019F0259DFBF90000A3DA /* AppDelegate.swift in Sources */,
+				CA701A1425A61AB10000A3DA /* mathsManiaSoloMode.swift in Sources */,
+				CAD4E2C025DBEAB100546FD9 /* LeaderboardViewController.swift in Sources */,
+				CA701A10259DFCDB0000A3DA /* mathsManiaFrontpage.swift in Sources */,
+				CA68448725D1F62300B2063F /* popupViewController.swift in Sources */,
+				CAD4E2C825DC310600546FD9 /* counties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +271,6 @@
 				CA7019F4259DFBF90000A3DA /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CA7019F8259DFBFA0000A3DA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CA7019F9259DFBFA0000A3DA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -370,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

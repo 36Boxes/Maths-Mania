@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="ADAM.CGPRO.otf">
+            <string>ADAM.CGPRO</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="132" id="KGk-i7-Jjw" customClass="TableViewCell" customModule="MathsManiaV3" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="698" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="698" height="132"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LeaderboardBackground" translatesAutoresizingMaskIntoConstraints="NO" id="lEk-sm-v7L">
+                        <rect key="frame" x="-122.5" y="-21" width="943" height="174"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="174" id="2bx-57-EQo"/>
+                            <constraint firstAttribute="width" constant="943" id="QF2-v8-CEw"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRt-X7-Tq7">
+                        <rect key="frame" x="8" y="8" width="682" height="116"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HV1-dW-Oyk">
+                                <rect key="frame" x="0.0" y="0.0" width="49.5" height="116"/>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMy-d7-6Dq">
+                                <rect key="frame" x="632.5" y="0.0" width="49.5" height="116"/>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qMy-d7-6Dq" secondAttribute="trailing" id="0Pr-bB-fbd"/>
+                            <constraint firstItem="HV1-dW-Oyk" firstAttribute="top" secondItem="IRt-X7-Tq7" secondAttribute="top" id="BYD-DZ-FRM"/>
+                            <constraint firstItem="qMy-d7-6Dq" firstAttribute="top" secondItem="IRt-X7-Tq7" secondAttribute="top" id="MmX-zd-ifY"/>
+                            <constraint firstAttribute="bottom" secondItem="HV1-dW-Oyk" secondAttribute="bottom" id="Mxm-qE-w2r"/>
+                            <constraint firstAttribute="bottom" secondItem="qMy-d7-6Dq" secondAttribute="bottom" id="SVv-ge-j36"/>
+                            <constraint firstItem="HV1-dW-Oyk" firstAttribute="leading" secondItem="IRt-X7-Tq7" secondAttribute="leading" id="m7I-NG-huY"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVP-di-ISc">
+                        <rect key="frame" x="324" y="56" width="50" height="20"/>
+                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IRt-X7-Tq7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="62n-zI-hI7"/>
+                    <constraint firstItem="cVP-di-ISc" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="D9i-Wl-jqt"/>
+                    <constraint firstItem="lEk-sm-v7L" firstAttribute="centerX" secondItem="IRt-X7-Tq7" secondAttribute="centerX" id="c6J-3T-DHp"/>
+                    <constraint firstAttribute="trailing" secondItem="IRt-X7-Tq7" secondAttribute="trailing" constant="8" id="eZv-bI-m1E"/>
+                    <constraint firstItem="cVP-di-ISc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="h4A-6W-efu"/>
+                    <constraint firstItem="IRt-X7-Tq7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="mTl-1v-j6c"/>
+                    <constraint firstAttribute="bottom" secondItem="IRt-X7-Tq7" secondAttribute="bottom" constant="8" id="mck-H8-VKY"/>
+                    <constraint firstItem="lEk-sm-v7L" firstAttribute="centerY" secondItem="IRt-X7-Tq7" secondAttribute="centerY" id="oAl-Og-P0Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="PlayerArea" destination="cVP-di-ISc" id="bhA-0U-IKc"/>
+                <outlet property="PlayerName" destination="HV1-dW-Oyk" id="DRI-gq-c8Y"/>
+                <outlet property="PlayerScore" destination="qMy-d7-6Dq" id="WdP-gg-Fya"/>
+            </connections>
+            <point key="canvasLocation" x="-444.92753623188412" y="69.642857142857139"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="LeaderboardBackground" width="4167" height="1007"/>
+    </resources>
+</document>
