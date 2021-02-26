@@ -529,7 +529,11 @@ class mathsManiaSoloMode: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         // Adding the background to the application
         SoloMode.frame.size.height = SoloMode.frame.size.height - SoloMode.font.descender
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -569,6 +573,8 @@ class mathsManiaSoloMode: UIViewController  {
         spade.fillColor = UIColor.clear.cgColor
         spade.strokeEnd = 0
         view.layer.addSublayer(spade)
+        
+        
 
 
     

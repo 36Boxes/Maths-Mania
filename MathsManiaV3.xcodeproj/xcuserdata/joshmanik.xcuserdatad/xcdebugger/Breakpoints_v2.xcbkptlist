@@ -3,4 +3,114 @@
    uuid = "F7E04A03-73B1-4CE9-820A-A7FFF6D97721"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "68C32E12-AFCB-4C2D-B6BF-A50A8DE36C04"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MathsManiaV3/TableViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "TableViewCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "68C32E12-AFCB-4C2D-B6BF-A50A8DE36C04 - b1b0abf449ef2045"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MathsManiaV3.TableViewCell.PlayerName.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "MathsManiaV3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshmanik/Desktop/X-Code%20Projects/MathsManiaV3/MathsManiaV3/TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "68C32E12-AFCB-4C2D-B6BF-A50A8DE36C04 - 70bcd4c7c855dc71"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MathsManiaV3.TableViewCell.PlayerName.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "MathsManiaV3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshmanik/Desktop/X-Code%20Projects/MathsManiaV3/MathsManiaV3/TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "68C32E12-AFCB-4C2D-B6BF-A50A8DE36C04 - e6327e80eccd84f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MathsManiaV3.TableViewCell.PlayerName.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "MathsManiaV3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshmanik/Desktop/X-Code%20Projects/MathsManiaV3/MathsManiaV3/TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "68C32E12-AFCB-4C2D-B6BF-A50A8DE36C04 - 3a1539f40c4e5d5a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MathsManiaV3.TableViewCell.PlayerName.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MathsManiaV3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshmanik/Desktop/X-Code%20Projects/MathsManiaV3/MathsManiaV3/TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "68C32E12-AFCB-4C2D-B6BF-A50A8DE36C04 - 3fbe6338b038ea41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MathsManiaV3.TableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; MathsManiaV3.TableViewCell"
+                  moduleName = "MathsManiaV3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshmanik/Desktop/X-Code%20Projects/MathsManiaV3/MathsManiaV3/TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "68C32E12-AFCB-4C2D-B6BF-A50A8DE36C04 - d2722befdaa07416"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MathsManiaV3.TableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;MathsManiaV3.TableViewCell&gt;"
+                  moduleName = "MathsManiaV3"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joshmanik/Desktop/X-Code%20Projects/MathsManiaV3/MathsManiaV3/TableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

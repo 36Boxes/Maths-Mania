@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CA030B7225E0056F0031D832 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA030B7025E0056F0031D832 /* TableViewCell.swift */; };
 		CA030B7325E0056F0031D832 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA030B7125E0056F0031D832 /* TableViewCell.xib */; };
+		CA0800ED25E9448A00610F06 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0800EC25E9448A00610F06 /* GameKit.framework */; };
 		CA38877C25DD4798000A6F91 /* LocationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */; };
 		CA68448725D1F62300B2063F /* popupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68448625D1F62300B2063F /* popupViewController.swift */; };
 		CA7019F0259DFBF90000A3DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7019EF259DFBF90000A3DA /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		CA030B7025E0056F0031D832 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CA030B7125E0056F0031D832 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		CA0800EC25E9448A00610F06 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopupViewController.swift; sourceTree = "<group>"; };
 		CA68448625D1F62300B2063F /* popupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewController.swift; sourceTree = "<group>"; };
 		CA7019EC259DFBF90000A3DA /* MathsManiaV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathsManiaV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAD4E2AA25DAE45600546FD9 /* GameController.framework in Frameworks */,
+				CA0800ED25E9448A00610F06 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +130,7 @@
 		CAD4E2A825DAE45600546FD9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CA0800EC25E9448A00610F06 /* GameKit.framework */,
 				CAD4E2A925DAE45600546FD9 /* GameController.framework */,
 			);
 			name = Frameworks;

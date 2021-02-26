@@ -55,7 +55,11 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate, CLL
     // Function for proceeding to the leaderboards
     
     @IBAction func Leaderboards(_ sender: Any) {
+        if self.LocationSet == false{
+            print("YOU CANT GO ANYWHERE YET MATE")
+        }else{
         performSegue(withIdentifier: "leaderboard", sender: nil)
+        }
     }
     
     
@@ -92,6 +96,8 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate, CLL
                     self.LocationSet = false
                 }else{self.LocationSet = true}
                 }
+            
+
         }
         if LocationSet == false{
             let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationpopup") as! LocationPopupViewController

@@ -10,7 +10,7 @@ import UIKit
 import GameKit
 
 class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegate, UITableViewDelegate, UITableViewDataSource {
-    var Group_Loc_Scores = [["score" : String(), "location" : String(),"player_name" : String(), "player_ID" : String()]]
+    var Group_Loc_Scores = [["score" : "UserScore", "location" : "UserLocation","player_name" : "Player Name", "player_ID" : String()]]
     
     let counties : [String] = ["Bath and North East Somerset", "Bedfordshire", "Berkshire", "Bristol", "Buckinghamshire", "Cambridgeshire", "Cheshire","Cornwall", "County Durham", "Cumbria","Derbyshire", "Devon", "Dorset","East Riding of Yorkshire", "East Sussex", "Essex","Gloucestershire", "Greater London", "Greater Manchester","Hampshire", "Herefordshire", "Hertfordshire","Isle of Wight", "Isles of Scilly", "Kent","Lancashire", "Leicestershire", "Lincolnshire","Merseyside", "Norfolk", "North Somerset","North Yorkshire", "Northamptonshire", "Northumberland","Nottinghamshire", "Oxfordshire", "Rutland","Shropshire", "Somerset", "South Gloucestershire","South Yorkshire", "Staffordshire", "Suffolk","Surrey", "Tyne & Wear", "Warwickshire","West Midlands" ,"West Sussex", "West Yorkshire","Wiltshire", "Worcestershire"]
     
@@ -38,45 +38,9 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
                 text_to_show = counties[index]
             }
         }
-        
-        
         cell.PlayerName.text = player_name
         cell.PlayerArea.text = text_to_show
         cell.PlayerScore.text = score
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        if let locatID = group_scores["location"] as? String{
-//            let pop = Int(locatID)
-//            if let scored = group_scores["score"]!{
-//                let score = String(scored)
-//                cell.label1.text = score
-//                cell.label2.text = counties[pop]
-//                cell.Label3.text = group_scores["player_name"] as? String
-//            }else{
-//                cell.label2.text = counties[pop]
-//                cell.Label3.text = group_scores["player_name"] as? String
-//            }
-//        } else{
-//            let locatID = group_scores["location"] as! String
-//            let pop = Int(locatID)
-//            cell.label2.text = counties[pop ?? 0]
-//            cell.Label3.text = group_scores["player_name"] as? String
-//        }
-//
-//
-//
         return cell
     }
     
@@ -87,14 +51,33 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         
     @IBOutlet weak var tableView: UITableView!
     @IBAction func showlead(_ sender: Any) {
+        tableView.reloadData()
+        var UserLocationiD = String()
+        var ListOfScoresInArea = [["score" : "UserScore", "location" : "UserLocation","player_name" : "Player Name", "player_ID" : String()]]
+        for (index, Grouped_Score) in self.Group_Loc_Scores.enumerated(){
+            if index == 1{
+                UserLocationiD = Grouped_Score["location"]!
+            }
+            var LocationToTest = Grouped_Score["location"]!
+
+            if UserLocationiD == LocationToTest{
+                let AdditionToList = [
+                    "score" : String(Grouped_Score["score"]!),
+                    "location" : String(Grouped_Score["location"]!),
+                    "player_name" : String(Grouped_Score["player_name"]!),
+                    "player_ID" : String(Grouped_Score["player_ID"]!)
+                ]
+                ListOfScoresInArea.append(AdditionToList)
+
+            }
+
+        }
+        print("List of scores in area")
+        print(ListOfScoresInArea)
         showLeader()
     }
     @IBAction func GoBackHome(_ sender: Any) {
-//        performSegue(withIdentifier: "backfrontleaderboard", sender: nil)
-        print("reloading")
-        tableView.reloadData()
-        print("done")
-        print(Group_Loc_Scores)
+        performSegue(withIdentifier: "backfrontleaderboard", sender: nil)
     }
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
@@ -122,7 +105,6 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
             else{return}
             print(popsicle)
             if leaderBoard.localPlayerScore?.value != nil{
-                print("location already logged")
             }else{
                 let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationpopup") as! LocationPopupViewController
 
@@ -139,6 +121,11 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         self.view.insertSubview(backgroundImage, at: 0)
         authPlayer()
         load_leaders()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
 
 
     }
@@ -160,9 +147,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
             for score in scores{
                 for location in locats{
                     if location.player.playerID == score.player.playerID{
-                        print("FOUND A MATCH")
                         let group = ["score" : String(score.value), "location" : String(location.value),"player_name" : String(score.player.alias), "player_ID" : String(score.player.playerID)]
-                        print(group)
                         self.Group_Loc_Scores.append(group)
                         
                     }
