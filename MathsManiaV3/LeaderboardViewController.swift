@@ -94,27 +94,6 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
-        let leaderBoard : GKLeaderboard = GKLeaderboard()
-        leaderBoard.timeScope = .allTime
-        leaderBoard.identifier = "Locations"
-        // load all the leaderboard scores and check to see if the user has set a locationID before the view loads
-        leaderBoard.loadScores { scores, error in
-            guard let scores = scores else {
-                return }
-            guard let popsicle = leaderBoard.localPlayerScore?.value
-            else{return}
-            print(popsicle)
-            if leaderBoard.localPlayerScore?.value != nil{
-            }else{
-                let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationpopup") as! LocationPopupViewController
-
-                self.addChild(Locationpopup)
-                // ensuring the popup frame is the same as the main view frame
-                Locationpopup.view.frame = self.view.frame
-                //adding the popup to the view
-                self.view.addSubview(Locationpopup.view)
-                Locationpopup.didMove(toParent: self)}
-        }
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
         backgroundImage.image = UIImage(named: "4157744")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
@@ -141,6 +120,28 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
             guard let scores = scores else {return}
         // load all the leaderboard scores and check to see if the user has set a locationID before the view loads
         Locations.loadScores { locats, error in
+            
+            if Locations.localPlayerScore?.value == nil{
+                let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationpopup") as! LocationPopupViewController
+
+                self.addChild(Locationpopup)
+                // ensuring the popup frame is the same as the main view frame
+                Locationpopup.view.frame = self.view.frame
+                //adding the popup to the view
+                self.view.addSubview(Locationpopup.view)
+                Locationpopup.didMove(toParent: self)
+            }else{
+                if Scores.localPlayerScore?.value == nil{
+                    print("You Need to submit a score")
+                    let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "noscorepopup") as! NoScorePopupViewController
+
+                    self.addChild(Locationpopup)
+                    // ensuring the popup frame is the same as the main view frame
+                    Locationpopup.view.frame = self.view.frame
+                    //adding the popup to the view
+                    self.view.addSubview(Locationpopup.view)
+                    Locationpopup.didMove(toParent: self)
+                }else{
             var Group_toAddto_Loc_Scores = [["score" : String(Scores.localPlayerScore!.value), "location" : String(Locations.localPlayerScore!.value),"player_name" : String((Scores.localPlayerScore?.player.alias)!), "player_ID" : String((Scores.localPlayerScore?.player.playerID)!)]]
             self.Group_Loc_Scores.append(contentsOf: Group_toAddto_Loc_Scores)
             guard let locats = locats else {return}
@@ -149,7 +150,8 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
                     if location.player.playerID == score.player.playerID{
                         let group = ["score" : String(score.value), "location" : String(location.value),"player_name" : String(score.player.alias), "player_ID" : String(score.player.playerID)]
                         self.Group_Loc_Scores.append(group)
-                        
+                    }
+                    }
                     }
                 }}
         }}

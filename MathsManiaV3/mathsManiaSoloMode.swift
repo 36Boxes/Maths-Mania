@@ -204,6 +204,25 @@ class mathsManiaSoloMode: UIViewController  {
         updateTimerDisplay()
         // If the timer goes below zero it means the user is out of time so the game should end
         if extraSeconds < 0 {
+            let int_user_answer = Int(answer_to_Question)
+                if int_user_answer == CorrectAnswer {
+                
+                // add seconds to the users time to allow them to continue
+                extraSeconds += 3
+                // Clearing the answer to the question
+                answer_to_Question = ""
+                // Clearing the answer box to the question as the user has got the question right
+                Answer.text = ""
+                // Adding to the score of the user
+                userScore += 1
+                // Reset all the decider functions
+                additionQuestion = false
+                minusQuestion = false
+                dividingQuestion = false
+                multiplicationQuestion = false
+                // Generate the next question for display
+                genQuestion()
+                }else{
             // Disable the buttons to make it clear the game is over
             disableButtons()
             // Invalidate the timer as the game is over
@@ -242,7 +261,7 @@ class mathsManiaSoloMode: UIViewController  {
             self.view.addSubview(Popup.view)
             Popup.didMove(toParent: self)
             
-        }
+            }}
         // Making the string answer of the user into an integer for comparison use
         if let int_user_answer = Int(answer_to_Question){
             // Check to see if the answer is correct

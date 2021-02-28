@@ -37,6 +37,8 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
     @IBOutlet weak var popupbutton: UIButton!
     @IBOutlet weak var CalculationLabel: UILabel!
     
+    @IBOutlet weak var PopupTitle: UILabel!
+    @IBOutlet weak var CalculateButton: UIButton!
     @IBAction func getLocation(_ sender: Any) {
         if popupbutton.currentTitle == "Continue"{
             performSegue(withIdentifier: "location_figured_out", sender: nil)
@@ -92,6 +94,7 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
                                 CalculationLabel.text = "Location Calculated!"
                                 popupbutton.isEnabled = true
                                 popupbutton.setTitle("Continue", for: UIControl.State.normal)
+                                CalculateButton.setTitle("Continue", for: UIControl.State.normal)
                             }
                             
                         }
