@@ -166,6 +166,8 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         self.view.insertSubview(backgroundImage, at: 0)
         authPlayer()
         load_leaders()
+        ReloadButton.isEnabled = false
+        ReloadButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
