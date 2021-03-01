@@ -76,7 +76,7 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate, CLL
         
         // Adding the background to the application
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Background")
+        backgroundImage.image = UIImage(named: "MathsManiaDonemaybe3")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         // Assign the locationID leaderboard to a leaderboard object
