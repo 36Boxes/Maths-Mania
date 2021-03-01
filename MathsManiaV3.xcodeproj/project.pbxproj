@@ -11,6 +11,8 @@
 		CA030B7325E0056F0031D832 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA030B7125E0056F0031D832 /* TableViewCell.xib */; };
 		CA0800ED25E9448A00610F06 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA0800EC25E9448A00610F06 /* GameKit.framework */; };
 		CA0800F125EBE74F00610F06 /* NoScorePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0800F025EBE74F00610F06 /* NoScorePopupViewController.swift */; };
+		CA0800FA25ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0800F825ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift */; };
+		CA0800FB25ED30F600610F06 /* LeaderBoardBreakTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA0800F925ED30F600610F06 /* LeaderBoardBreakTableViewCell.xib */; };
 		CA38877C25DD4798000A6F91 /* LocationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */; };
 		CA68448725D1F62300B2063F /* popupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA68448625D1F62300B2063F /* popupViewController.swift */; };
 		CA7019F0259DFBF90000A3DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7019EF259DFBF90000A3DA /* AppDelegate.swift */; };
@@ -41,6 +43,8 @@
 		CA030B7125E0056F0031D832 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		CA0800EC25E9448A00610F06 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		CA0800F025EBE74F00610F06 /* NoScorePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoScorePopupViewController.swift; sourceTree = "<group>"; };
+		CA0800F825ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardBreakTableViewCell.swift; sourceTree = "<group>"; };
+		CA0800F925ED30F600610F06 /* LeaderBoardBreakTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LeaderBoardBreakTableViewCell.xib; sourceTree = "<group>"; };
 		CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPopupViewController.swift; sourceTree = "<group>"; };
 		CA68448625D1F62300B2063F /* popupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewController.swift; sourceTree = "<group>"; };
 		CA7019EC259DFBF90000A3DA /* MathsManiaV3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MathsManiaV3.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +121,8 @@
 				CAD4E2C725DC310600546FD9 /* counties.swift */,
 				CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */,
 				CA0800F025EBE74F00610F06 /* NoScorePopupViewController.swift */,
+				CA0800F825ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift */,
+				CA0800F925ED30F600610F06 /* LeaderBoardBreakTableViewCell.xib */,
 			);
 			path = MathsManiaV3;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA7019F7259DFBFA0000A3DA /* Assets.xcassets in Resources */,
+				CA0800FB25ED30F600610F06 /* LeaderBoardBreakTableViewCell.xib in Resources */,
 				CA030B7325E0056F0031D832 /* TableViewCell.xib in Resources */,
 				CA701A1225A617F80000A3DA /* ADAM.CGPRO.otf in Resources */,
 				CAD4E2A125DAE12800546FD9 /* Launch Screen.storyboard in Resources */,
@@ -251,6 +258,7 @@
 				CA701A10259DFCDB0000A3DA /* mathsManiaFrontpage.swift in Sources */,
 				CA68448725D1F62300B2063F /* popupViewController.swift in Sources */,
 				CAD4E2C825DC310600546FD9 /* counties.swift in Sources */,
+				CA0800FA25ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +419,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -429,6 +438,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

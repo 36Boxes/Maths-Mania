@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,96 +22,66 @@
                 <rect key="frame" x="0.0" y="0.0" width="399" height="147"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Rr-mj-TUP">
-                        <rect key="frame" x="29.5" y="48.5" width="340" height="50"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="4Rr-mj-TUP">
+                        <rect key="frame" x="20" y="67" width="370.5" height="13.5"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJZ-iN-fIe">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcx-9C-55c">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rank" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5we-EC-jlv">
+                                <rect key="frame" x="0.0" y="0.0" width="40" height="13.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="BuU-Oz-XvE"/>
-                                    <constraint firstAttribute="height" constant="50" id="K2k-Oa-0uV"/>
-                                    <constraint firstItem="Wcx-9C-55c" firstAttribute="leading" secondItem="nJZ-iN-fIe" secondAttribute="leading" id="RLA-jY-NOp"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wcx-9C-55c" secondAttribute="trailing" id="eaP-VU-3Vj"/>
-                                    <constraint firstAttribute="bottom" secondItem="Wcx-9C-55c" secondAttribute="bottom" id="evY-KT-IfD"/>
-                                    <constraint firstItem="Wcx-9C-55c" firstAttribute="top" secondItem="nJZ-iN-fIe" secondAttribute="top" id="hug-CO-IMh"/>
-                                    <constraint firstItem="Wcx-9C-55c" firstAttribute="centerX" secondItem="nJZ-iN-fIe" secondAttribute="centerX" id="oIp-ig-sWt"/>
+                                    <constraint firstAttribute="width" constant="40" id="aB9-LH-zpu"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RnR-uP-aOt">
-                                <rect key="frame" x="120" y="0.0" width="100" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSl-Vu-ViY">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSl-Vu-ViY">
+                                <rect key="frame" x="65" y="0.0" width="150" height="13.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="3e6-Z7-RBh"/>
-                                    <constraint firstAttribute="trailing" secondItem="BSl-Vu-ViY" secondAttribute="trailing" id="4Ng-dQ-rsb"/>
-                                    <constraint firstItem="BSl-Vu-ViY" firstAttribute="top" secondItem="RnR-uP-aOt" secondAttribute="top" id="4cV-P8-Y4n"/>
-                                    <constraint firstItem="BSl-Vu-ViY" firstAttribute="centerX" secondItem="RnR-uP-aOt" secondAttribute="centerX" id="iUM-cu-aae"/>
-                                    <constraint firstAttribute="height" constant="50" id="tUo-PW-1lx"/>
-                                    <constraint firstAttribute="bottom" secondItem="BSl-Vu-ViY" secondAttribute="bottom" id="xXO-ea-Ox8"/>
-                                    <constraint firstItem="BSl-Vu-ViY" firstAttribute="leading" secondItem="RnR-uP-aOt" secondAttribute="leading" id="yRD-cx-jOJ"/>
+                                    <constraint firstAttribute="width" constant="150" id="9hF-dc-ZHg"/>
                                 </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMv-7Q-Z9z">
-                                <rect key="frame" x="240" y="0.0" width="100" height="50"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxC-WH-pwj">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
-                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="7"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcx-9C-55c">
+                                <rect key="frame" x="240" y="0.0" width="85" height="13.5"/>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxC-WH-pwj">
+                                <rect key="frame" x="350" y="0.0" width="20.5" height="13.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mxC-WH-pwj" secondAttribute="trailing" id="UfP-Vz-7I4"/>
-                                    <constraint firstItem="mxC-WH-pwj" firstAttribute="leading" secondItem="aMv-7Q-Z9z" secondAttribute="leading" id="Vtg-zP-ETf"/>
-                                    <constraint firstItem="mxC-WH-pwj" firstAttribute="centerX" secondItem="aMv-7Q-Z9z" secondAttribute="centerX" id="a2V-NA-znF"/>
-                                    <constraint firstAttribute="height" constant="50" id="adF-8R-UMT"/>
-                                    <constraint firstAttribute="width" constant="100" id="hji-y5-Ayc"/>
-                                    <constraint firstItem="mxC-WH-pwj" firstAttribute="top" secondItem="aMv-7Q-Z9z" secondAttribute="top" id="k4w-2C-Uxu"/>
-                                    <constraint firstAttribute="bottom" secondItem="mxC-WH-pwj" secondAttribute="bottom" id="vO1-od-lxL"/>
+                                    <constraint firstAttribute="width" constant="40" id="fZX-c9-fh5"/>
                                 </constraints>
-                            </view>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="7"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Wcx-9C-55c" firstAttribute="width" secondItem="5we-EC-jlv" secondAttribute="width" multiplier="2.125" id="7Qj-q8-YSD"/>
+                        </constraints>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstItem="4Rr-mj-TUP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="M5W-Mm-M1y"/>
                     <constraint firstItem="4Rr-mj-TUP" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="QbB-4q-suu"/>
-                    <constraint firstItem="4Rr-mj-TUP" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="TM2-zu-Z0z"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4Rr-mj-TUP" secondAttribute="trailing" id="qID-uu-cRT"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="PlayerArea" destination="mxC-WH-pwj" id="lzh-cg-SB7"/>
                 <outlet property="PlayerName" destination="BSl-Vu-ViY" id="1fg-NE-jKN"/>
+                <outlet property="PlayerRank" destination="5we-EC-jlv" id="5wN-gi-LvP"/>
                 <outlet property="PlayerScore" destination="Wcx-9C-55c" id="rub-WW-qnE"/>
             </connections>
             <point key="canvasLocation" x="-302.17391304347831" y="86.049107142857139"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

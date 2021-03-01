@@ -10,21 +10,93 @@ import UIKit
 import GameKit
 
 class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegate, UITableViewDelegate, UITableViewDataSource {
-    var Group_Loc_Scores = [["score" : "UserScore", "location" : "UserLocation","player_name" : "Player Name", "player_ID" : String()]]
+    
+    @IBOutlet weak var ReloadButton: UIButton!
+    @IBOutlet weak var EntireButton: UIButton!
+    // The Dictionary that holds our leaderboard info
+    
+    var Group_Loc_Scores = [["score" : "Score", "location" : "UserLocation","player_name" : "Player Name", "player_ID" : String(), "rank" : "rank"]]
+    
+    // The elegible counties for localised leaderboards
     
     let counties : [String] = ["Bath and North East Somerset", "Bedfordshire", "Berkshire", "Bristol", "Buckinghamshire", "Cambridgeshire", "Cheshire","Cornwall", "County Durham", "Cumbria","Derbyshire", "Devon", "Dorset","East Riding of Yorkshire", "East Sussex", "Essex","Gloucestershire", "Greater London", "Greater Manchester","Hampshire", "Herefordshire", "Hertfordshire","Isle of Wight", "Isles of Scilly", "Kent","Lancashire", "Leicestershire", "Lincolnshire","Merseyside", "Norfolk", "North Somerset","North Yorkshire", "Northamptonshire", "Northumberland","Nottinghamshire", "Oxfordshire", "Rutland","Shropshire", "Somerset", "South Gloucestershire","South Yorkshire", "Staffordshire", "Suffolk","Surrey", "Tyne & Wear", "Warwickshire","West Midlands" ,"West Sussex", "West Yorkshire","Wiltshire", "Worcestershire"]
+    
+    // Passing the length of the data to the table
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Group_Loc_Scores.count
     }
     
+    // Updating table values
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 2{
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "breakcell", for: indexPath) as!
+                LeaderBoardBreakTableViewCell
+            return cell
+        }
+        if indexPath.row == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as!
+                TableViewCell
+            let group_scores = Group_Loc_Scores[indexPath.row]
+            let scor = group_scores["score"]!
+            let locatio = group_scores["location"]!
+            let player_nam = group_scores["player_name"]!
+            let player_rank = group_scores["rank"]!
+            
+            let score = String(scor)
+            let loca = String(locatio)
+            let player_name = String(player_nam)
+            
+            let loc = Int(loca)
+            var text_to_show = "Location"
+            
+            for (index, county) in counties.enumerated(){
+                if index == loc{
+                    text_to_show = counties[index]
+                }
+            }
+            cell.PlayerRank.text = player_rank
+            cell.PlayerName.text = player_nam
+            cell.PlayerArea.text = text_to_show
+            cell.PlayerScore.text = score
+            return cell
+        }
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as!
+                TableViewCell
+            let group_scores = Group_Loc_Scores[indexPath.row]
+            let scor = group_scores["score"]!
+            let locatio = group_scores["location"]!
+            let player_nam = group_scores["player_name"]!
+            let player_rank = group_scores["rank"]!
+            
+            let score = String(scor)
+            let loca = String(locatio)
+            let player_name = String(player_nam)
+            
+            let loc = Int(loca)
+            var text_to_show = "Location"
+            
+            for (index, county) in counties.enumerated(){
+                if index == loc{
+                    text_to_show = counties[index]
+                }
+            }
+            cell.PlayerRank.text = player_rank
+            cell.PlayerName.text = player_nam
+            cell.PlayerArea.text = text_to_show
+            cell.PlayerScore.text = score
+            return cell
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as!
             TableViewCell
         let group_scores = Group_Loc_Scores[indexPath.row]
         let scor = group_scores["score"]!
         let locatio = group_scores["location"]!
         let player_nam = group_scores["player_name"]!
+        let player_rank = group_scores["rank"]!
         
         let score = String(scor)
         let loca = String(locatio)
@@ -38,47 +110,39 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
                 text_to_show = counties[index]
             }
         }
-        cell.PlayerName.text = player_name
+        var rank = indexPath.row
+        // we need to add 1 as index starts at zero
+        
+        rank = rank - 2
+        let pop = String(rank)
+        
+        
+        cell.PlayerRank.text = pop
+        cell.PlayerName.text = player_nam
         cell.PlayerArea.text = text_to_show
         cell.PlayerScore.text = score
         return cell
+        
     }
     
 
-    
     
     var highScore:Int = 0
         
+    @IBAction func ShowEntireLeaderboard(_ sender: Any) {
+        load_full_leaders()
+        EntireButton.isEnabled = false
+        EntireButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        ReloadButton.isEnabled = true
+    }
     @IBOutlet weak var tableView: UITableView!
     @IBAction func showlead(_ sender: Any) {
-        tableView.reloadData()
-        var UserLocationiD = String()
-        var ListOfScoresInArea = [["score" : "UserScore", "location" : "UserLocation","player_name" : "Player Name", "player_ID" : String()]]
-        for (index, Grouped_Score) in self.Group_Loc_Scores.enumerated(){
-            if index == 1{
-                UserLocationiD = Grouped_Score["location"]!
-            }
-            var LocationToTest = Grouped_Score["location"]!
-
-            if UserLocationiD == LocationToTest{
-                let AdditionToList = [
-                    "score" : String(Grouped_Score["score"]!),
-                    "location" : String(Grouped_Score["location"]!),
-                    "player_name" : String(Grouped_Score["player_name"]!),
-                    "player_ID" : String(Grouped_Score["player_ID"]!)
-                ]
-                ListOfScoresInArea.append(AdditionToList)
-
-            }
-
-        }
-        print("List of scores in area")
-        print(ListOfScoresInArea)
-        showLeader()
+        load_leaders()
+        ReloadButton.isEnabled = false
+        ReloadButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        EntireButton.isEnabled = true
     }
-    @IBAction func GoBackHome(_ sender: Any) {
-        performSegue(withIdentifier: "backfrontleaderboard", sender: nil)
-    }
+    @IBAction func GoBackHome(_ sender: Any) {performSegue(withIdentifier: "backfrontleaderboard", sender: nil)}
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
@@ -91,7 +155,9 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         let nib = UINib(nibName: "TableViewCell", bundle: nil)
+        let nib2 = UINib(nibName: "LeaderBoardBreakTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "TableViewCell")
+        tableView.register(nib2, forCellReuseIdentifier: "breakcell")
         tableView.delegate = self
         tableView.dataSource = self
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -110,6 +176,9 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
     }
     
     func load_leaders(){
+        Group_Loc_Scores.removeAll()
+        Group_Loc_Scores = [["score" : "Score", "location" : "UserLocation","player_name" : "Player Name", "player_ID" : String(), "rank" : "rank"]]
+        var UserLocation = Int64()
         let Locations : GKLeaderboard = GKLeaderboard()
         Locations.timeScope = .allTime
         Locations.identifier = "Locations"
@@ -121,6 +190,8 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         // load all the leaderboard scores and check to see if the user has set a locationID before the view loads
         Locations.loadScores { locats, error in
             
+            // If this value is nil we know the user hasnt set a location so we need to prompt them to do so
+            
             if Locations.localPlayerScore?.value == nil{
                 let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationpopup") as! LocationPopupViewController
 
@@ -131,28 +202,53 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
                 self.view.addSubview(Locationpopup.view)
                 Locationpopup.didMove(toParent: self)
             }else{
+                
+                // If this is nil we know the user is yet to submit a score so we need to prompt them to do so
+                
                 if Scores.localPlayerScore?.value == nil{
-                    print("You Need to submit a score")
-                    let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "noscorepopup") as! NoScorePopupViewController
-
-                    self.addChild(Locationpopup)
+                    let NoScorepopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "noscorepopup") as! NoScorePopupViewController
+                    self.addChild(NoScorepopup)
                     // ensuring the popup frame is the same as the main view frame
-                    Locationpopup.view.frame = self.view.frame
+                    NoScorepopup.view.frame = self.view.frame
                     //adding the popup to the view
-                    self.view.addSubview(Locationpopup.view)
-                    Locationpopup.didMove(toParent: self)
+                    self.view.addSubview(NoScorepopup.view)
+                    NoScorepopup.didMove(toParent: self)
                 }else{
-            var Group_toAddto_Loc_Scores = [["score" : String(Scores.localPlayerScore!.value), "location" : String(Locations.localPlayerScore!.value),"player_name" : String((Scores.localPlayerScore?.player.alias)!), "player_ID" : String((Scores.localPlayerScore?.player.playerID)!)]]
+                    
+                    // Add the local players score so we show that at the top
+                    
+                    let Group_toAddto_Loc_Scores = [["score" : String(Scores.localPlayerScore!.value), "location" : String(Locations.localPlayerScore!.value),"player_name" : String((Scores.localPlayerScore?.player.alias)!), "player_ID" : String((Scores.localPlayerScore?.player.playerID)!),
+                                                     "rank" : String(Scores.localPlayerScore!.rank)
+                    ]]
+                    
+                    UserLocation = Locations.localPlayerScore!.value
+                    
+                    // We add this as we need a blank in the data to workaround having a blank row in the table view
+                    
+                    let Extra_Addition = [["score": " ",
+                                           "location": " ",
+                                           "player_name" : " ",
+                                           "player_ID" : " ",
+                                           "rank" : " "]]
+                    
             self.Group_Loc_Scores.append(contentsOf: Group_toAddto_Loc_Scores)
+            self.Group_Loc_Scores.append(contentsOf: Extra_Addition)
+                
+                
             guard let locats = locats else {return}
             for score in scores{
                 for location in locats{
+                    // Check to make sure we have the same players location score and the actual score
                     if location.player.playerID == score.player.playerID{
-                        let group = ["score" : String(score.value), "location" : String(location.value),"player_name" : String(score.player.alias), "player_ID" : String(score.player.playerID)]
+                        //Check to make sure the player in questions location is the same as the users location
+                        if location.value == UserLocation{
+                            let group = ["score" : String(score.value), "location" : String(location.value),"player_name" : String(score.player.alias), "player_ID" : String(score.player.playerID), "rank" : String(score.rank)]
                         self.Group_Loc_Scores.append(group)
+                        }
                     }
                     }
                     }
+                    self.tableView.reloadData()
                 }}
         }}
     }
@@ -186,5 +282,81 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         }
 
     }
+    
+    func load_full_leaders(){
+        Group_Loc_Scores.removeAll()
+        Group_Loc_Scores = [["score" : "Score", "location" : "UserLocation","player_name" : "Player Name", "player_ID" : String(), "rank" : "rank"]]
+        let Locations : GKLeaderboard = GKLeaderboard()
+        Locations.timeScope = .allTime
+        Locations.identifier = "Locations"
+        let Scores : GKLeaderboard = GKLeaderboard()
+        Scores.timeScope = .allTime
+        Scores.identifier = "Scores"
+        Scores.loadScores { scores, error in
+            guard let scores = scores else {return}
+        // load all the leaderboard scores and check to see if the user has set a locationID before the view loads
+        Locations.loadScores { locats, error in
+            
+            // If this value is nil we know the user hasnt set a location so we need to prompt them to do so
+            
+            if Locations.localPlayerScore?.value == nil{
+                let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationpopup") as! LocationPopupViewController
+
+                self.addChild(Locationpopup)
+                // ensuring the popup frame is the same as the main view frame
+                Locationpopup.view.frame = self.view.frame
+                //adding the popup to the view
+                self.view.addSubview(Locationpopup.view)
+                Locationpopup.didMove(toParent: self)
+            }else{
+                
+                // If this is nil we know the user is yet to submit a score so we need to prompt them to do so
+                
+                if Scores.localPlayerScore?.value == nil{
+                    let NoScorepopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "noscorepopup") as! NoScorePopupViewController
+                    self.addChild(NoScorepopup)
+                    // ensuring the popup frame is the same as the main view frame
+                    NoScorepopup.view.frame = self.view.frame
+                    //adding the popup to the view
+                    self.view.addSubview(NoScorepopup.view)
+                    NoScorepopup.didMove(toParent: self)
+                }else{
+                    
+                    // Add the local players score so we show that at the top
+                    
+                    let Group_toAddto_Loc_Scores = [["score" : String(Scores.localPlayerScore!.value), "location" : String(Locations.localPlayerScore!.value),"player_name" : String((Scores.localPlayerScore?.player.alias)!), "player_ID" : String((Scores.localPlayerScore?.player.playerID)!),
+                                                     "rank" : String(Scores.localPlayerScore!.rank)
+                    ]]
+                    
+                    // We add this as we need a blank in the data to workaround having a blank row in the table view
+                    
+                    let Extra_Addition = [["score": " ",
+                                           "location": " ",
+                                           "player_name" : " ",
+                                           "player_ID" : " ",
+                                           "rank" : " "]]
+                    
+            self.Group_Loc_Scores.append(contentsOf: Group_toAddto_Loc_Scores)
+            self.Group_Loc_Scores.append(contentsOf: Extra_Addition)
+                
+                
+            guard let locats = locats else {return}
+            for score in scores{
+                for location in locats{
+                    // Check to make sure we have the same players location score and the actual score
+                    if location.player.playerID == score.player.playerID{
+                        //Check to make sure the player in questions location is the same as the users location
+                            let group = ["score" : String(score.value), "location" : String(location.value),"player_name" : String(score.player.alias), "player_ID" : String(score.player.playerID), "rank" : String(score.rank)]
+                        self.Group_Loc_Scores.append(group)
+                    }
+                    }
+                    }
+                    print(self.Group_Loc_Scores)
+                    self.tableView.reloadData()
+                }}
+        }}
+    }
 
 }
+
+

@@ -176,6 +176,8 @@ class mathsManiaSoloMode: UIViewController  {
             self.enterBut.isEnabled = true
             // Change start and clear buttons into clear one and all clear
             self.enterBut.setTitle("Clear", for: UIControl.State.normal)
+            let colour = self.clearBut.backgroundColor
+            self.enterBut.backgroundColor = colour
             self.clearBut.setTitle("ALL Clear", for: UIControl.State.normal)
             // Invalidate the timer as the start timer has ended
             self.startTimer.invalidate()

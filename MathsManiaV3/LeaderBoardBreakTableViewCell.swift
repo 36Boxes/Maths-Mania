@@ -1,21 +1,15 @@
 //
-//  TableViewCell.swift
+//  LeaderBoardBreakTableViewCell.swift
 //  MathsManiaV3
 //
-//  Created by Josh Manik on 19/02/2021.
+//  Created by Josh Manik on 01/03/2021.
 //  Copyright © 2021 Josh Manik. All rights reserved.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-    @IBOutlet weak var PlayerName: UILabel!
-    
-    @IBOutlet weak var PlayerArea: UILabel!
-    
-    @IBOutlet weak var PlayerScore: UILabel!
-    
-    @IBOutlet weak var PlayerRank: UILabel!
+class LeaderBoardBreakTableViewCell: UITableViewCell {
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

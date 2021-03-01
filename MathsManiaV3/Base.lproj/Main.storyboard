@@ -27,6 +27,11 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testBackgroundcopy" translatesAutoresizingMaskIntoConstraints="NO" id="R3J-Ki-0jK">
                                         <rect key="frame" x="5" y="5" width="215" height="452"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRdius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QhD-f2-dlA">
                                         <rect key="frame" x="50" y="425" width="125" height="21"/>
@@ -158,14 +163,30 @@
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" systemColor="systemTealColor"/>
                                 <button key="tableHeaderView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="eRh-ex-9rc">
                                     <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Show Leaderboard"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                    <state key="normal" title="Reload Leaderboard">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <connections>
                                         <action selector="showlead:" destination="B3r-hz-VsI" eventType="touchUpInside" id="Ycf-Rw-H3i"/>
+                                    </connections>
+                                </button>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Vh7-hj-H58">
+                                    <rect key="frame" x="0.0" y="30" width="374" height="30"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                    <state key="normal" title="Show Entire Leaderboard">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="ShowEntireLeaderboard:" destination="B3r-hz-VsI" eventType="touchUpInside" id="TaN-qZ-5aU"/>
                                     </connections>
                                 </button>
                             </tableView>
@@ -185,6 +206,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="EntireButton" destination="Vh7-hj-H58" id="2OB-ql-UPn"/>
+                        <outlet property="ReloadButton" destination="eRh-ex-9rc" id="ayx-ip-OAI"/>
                         <outlet property="tableView" destination="aMe-hC-UVV" id="JLj-ez-KH2"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="backfrontleaderboard" modalPresentationStyle="fullScreen" id="GvZ-G2-KiY"/>
                     </connections>
@@ -340,7 +363,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="104.5" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rgd-13-253">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="91"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="100" id="Ug1-ov-nDw"/>
                                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="105" id="gVS-Px-KVv"/>
@@ -357,7 +380,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="rgd-13-253" firstAttribute="leading" secondItem="FSu-Es-3Z1" secondAttribute="leading" id="FnG-8S-jcH"/>
-                                                    <constraint firstAttribute="bottom" secondItem="rgd-13-253" secondAttribute="bottom" constant="-10" id="Oit-Bk-qub"/>
+                                                    <constraint firstAttribute="bottom" secondItem="rgd-13-253" secondAttribute="bottom" constant="-6" id="Oit-Bk-qub"/>
                                                     <constraint firstAttribute="trailing" secondItem="rgd-13-253" secondAttribute="trailing" id="iwc-84-WN7"/>
                                                     <constraint firstItem="rgd-13-253" firstAttribute="top" secondItem="FSu-Es-3Z1" secondAttribute="top" id="uxD-3R-sA6"/>
                                                 </constraints>
@@ -366,7 +389,7 @@
                                                 <rect key="frame" x="154.5" y="0.0" width="105" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zss-Cm-u45">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="2">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -381,14 +404,14 @@
                                                     <constraint firstAttribute="trailing" secondItem="Zss-Cm-u45" secondAttribute="trailing" id="DPK-fE-hln"/>
                                                     <constraint firstItem="Zss-Cm-u45" firstAttribute="top" secondItem="f1f-Kd-dqy" secondAttribute="top" id="Z1w-2W-URk"/>
                                                     <constraint firstItem="Zss-Cm-u45" firstAttribute="leading" secondItem="f1f-Kd-dqy" secondAttribute="leading" id="n7h-5j-qBu"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Zss-Cm-u45" secondAttribute="bottom" constant="-10" id="stp-TV-mJW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Zss-Cm-u45" secondAttribute="bottom" constant="-6" id="stp-TV-mJW"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="II1-3L-vCD">
                                                 <rect key="frame" x="309.5" y="0.0" width="104.5" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGj-FR-eN0">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="3">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -400,7 +423,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="LGj-FR-eN0" secondAttribute="bottom" constant="-10" id="3f8-K1-fLa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="LGj-FR-eN0" secondAttribute="bottom" constant="-6" id="3f8-K1-fLa"/>
                                                     <constraint firstItem="LGj-FR-eN0" firstAttribute="top" secondItem="II1-3L-vCD" secondAttribute="top" id="IZm-YZ-Jjp"/>
                                                     <constraint firstItem="LGj-FR-eN0" firstAttribute="leading" secondItem="II1-3L-vCD" secondAttribute="leading" id="oM6-vN-ZVV"/>
                                                     <constraint firstAttribute="trailing" secondItem="LGj-FR-eN0" secondAttribute="trailing" id="vqJ-lS-ryW"/>
@@ -421,7 +444,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="104.5" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkg-9a-TtK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="4">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -435,7 +458,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="Mkg-9a-TtK" secondAttribute="trailing" id="0nG-N5-Sf6"/>
                                                     <constraint firstItem="Mkg-9a-TtK" firstAttribute="top" secondItem="rWY-Yj-7Vg" secondAttribute="top" id="6XX-gP-dvf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Mkg-9a-TtK" secondAttribute="bottom" constant="-10" id="OO8-YN-iRr"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Mkg-9a-TtK" secondAttribute="bottom" constant="-6" id="OO8-YN-iRr"/>
                                                     <constraint firstItem="Mkg-9a-TtK" firstAttribute="leading" secondItem="rWY-Yj-7Vg" secondAttribute="leading" id="lDY-nh-XG7"/>
                                                 </constraints>
                                             </view>
@@ -443,7 +466,7 @@
                                                 <rect key="frame" x="154.5" y="0.0" width="105" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYe-y5-Rl2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="5">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -456,7 +479,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="EYe-y5-Rl2" firstAttribute="leading" secondItem="eu0-8B-w58" secondAttribute="leading" id="9LA-Nb-s3J"/>
-                                                    <constraint firstAttribute="bottom" secondItem="EYe-y5-Rl2" secondAttribute="bottom" constant="-10" id="K3v-Lb-ZhI"/>
+                                                    <constraint firstAttribute="bottom" secondItem="EYe-y5-Rl2" secondAttribute="bottom" constant="-6" id="K3v-Lb-ZhI"/>
                                                     <constraint firstAttribute="trailing" secondItem="EYe-y5-Rl2" secondAttribute="trailing" id="Tgt-px-Rch"/>
                                                     <constraint firstItem="EYe-y5-Rl2" firstAttribute="top" secondItem="eu0-8B-w58" secondAttribute="top" id="fHh-gx-sRd"/>
                                                 </constraints>
@@ -465,7 +488,7 @@
                                                 <rect key="frame" x="309.5" y="0.0" width="104.5" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sT9-6L-lHH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="6">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -478,7 +501,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="sT9-6L-lHH" secondAttribute="trailing" id="23R-PW-Zvk"/>
-                                                    <constraint firstAttribute="bottom" secondItem="sT9-6L-lHH" secondAttribute="bottom" constant="-10" id="Fgw-Y9-IcN"/>
+                                                    <constraint firstAttribute="bottom" secondItem="sT9-6L-lHH" secondAttribute="bottom" constant="-6" id="Fgw-Y9-IcN"/>
                                                     <constraint firstItem="sT9-6L-lHH" firstAttribute="top" secondItem="4lp-Su-5a5" secondAttribute="top" id="STl-br-37P"/>
                                                     <constraint firstItem="sT9-6L-lHH" firstAttribute="leading" secondItem="4lp-Su-5a5" secondAttribute="leading" id="UJ0-bi-2aM"/>
                                                 </constraints>
@@ -492,7 +515,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="104.5" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BiC-QH-SMA">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="7">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -506,7 +529,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="BiC-QH-SMA" secondAttribute="trailing" id="AQ6-AA-sho"/>
                                                     <constraint firstItem="BiC-QH-SMA" firstAttribute="top" secondItem="UNo-bb-9xx" secondAttribute="top" id="cF0-Ci-MZB"/>
-                                                    <constraint firstAttribute="bottom" secondItem="BiC-QH-SMA" secondAttribute="bottom" constant="-10" id="ckp-Oi-Ofh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="BiC-QH-SMA" secondAttribute="bottom" constant="-6" id="ckp-Oi-Ofh"/>
                                                     <constraint firstItem="BiC-QH-SMA" firstAttribute="leading" secondItem="UNo-bb-9xx" secondAttribute="leading" id="sdr-PZ-kkz"/>
                                                 </constraints>
                                             </view>
@@ -514,7 +537,7 @@
                                                 <rect key="frame" x="154.5" y="0.0" width="105" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohv-tL-3Or">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="8">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -527,7 +550,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="ohv-tL-3Or" secondAttribute="trailing" id="Vbg-VY-OeA"/>
-                                                    <constraint firstAttribute="bottom" secondItem="ohv-tL-3Or" secondAttribute="bottom" constant="-10" id="YAe-gT-BsP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ohv-tL-3Or" secondAttribute="bottom" constant="-6" id="YAe-gT-BsP"/>
                                                     <constraint firstItem="ohv-tL-3Or" firstAttribute="leading" secondItem="wK6-OV-oXE" secondAttribute="leading" id="fj3-u5-QnB"/>
                                                     <constraint firstItem="ohv-tL-3Or" firstAttribute="top" secondItem="wK6-OV-oXE" secondAttribute="top" id="l8J-NB-A4c"/>
                                                 </constraints>
@@ -536,7 +559,7 @@
                                                 <rect key="frame" x="309.5" y="0.0" width="104.5" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pe7-1S-3oY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="104.5" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="9">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -549,7 +572,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="Pe7-1S-3oY" firstAttribute="top" secondItem="C29-JE-AYF" secondAttribute="top" id="1tb-wZ-fMz"/>
-                                                    <constraint firstAttribute="bottom" secondItem="Pe7-1S-3oY" secondAttribute="bottom" constant="-10" id="9aw-lr-75F"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Pe7-1S-3oY" secondAttribute="bottom" constant="-6" id="9aw-lr-75F"/>
                                                     <constraint firstItem="Pe7-1S-3oY" firstAttribute="leading" secondItem="C29-JE-AYF" secondAttribute="leading" id="Flz-hu-uUn"/>
                                                     <constraint firstAttribute="trailing" secondItem="Pe7-1S-3oY" secondAttribute="trailing" id="xhV-4A-hbd"/>
                                                 </constraints>
@@ -592,7 +615,7 @@
                                                 <rect key="frame" x="154.5" y="0.0" width="105" height="85"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pTi-GK-dDr">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="91"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="40"/>
                                                         <state key="normal" title="0">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -607,7 +630,7 @@
                                                     <constraint firstItem="pTi-GK-dDr" firstAttribute="leading" secondItem="d7j-Zz-eVE" secondAttribute="leading" id="84y-m3-cEW"/>
                                                     <constraint firstAttribute="trailing" secondItem="pTi-GK-dDr" secondAttribute="trailing" id="GL1-IK-cwV"/>
                                                     <constraint firstItem="pTi-GK-dDr" firstAttribute="top" secondItem="d7j-Zz-eVE" secondAttribute="top" id="Tru-ZB-f8y"/>
-                                                    <constraint firstAttribute="bottom" secondItem="pTi-GK-dDr" secondAttribute="bottom" constant="-10" id="pUV-BW-O2W"/>
+                                                    <constraint firstAttribute="bottom" secondItem="pTi-GK-dDr" secondAttribute="bottom" constant="-6" id="pUV-BW-O2W"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S67-ph-yvL">
@@ -615,7 +638,7 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJT-aF-gKP">
                                                         <rect key="frame" x="0.0" y="0.0" width="104.5" height="85"/>
-                                                        <color key="backgroundColor" red="0.92135465149999995" green="0.32803657650000001" blue="0.40385824440000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="14"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Enter/Start">
@@ -992,9 +1015,14 @@
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testBackgroundcopy" translatesAutoresizingMaskIntoConstraints="NO" id="3Hx-cz-NZk">
                                         <rect key="frame" x="5" y="5" width="215" height="452"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D8-Ok-9H8">
-                                        <rect key="frame" x="50" y="424" width="125" height="22"/>
+                                        <rect key="frame" x="50" y="425" width="125" height="21"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="8"/>
                                         <state key="normal" title="Home">
@@ -1020,7 +1048,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4RH-tN-1ix">
-                                        <rect key="frame" x="50" y="386" width="125" height="22"/>
+                                        <rect key="frame" x="50" y="388" width="125" height="21"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="8"/>
                                         <state key="normal" title="Solo Mode"/>
@@ -1084,7 +1112,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="bmD-qP-I2W"/>
-        <segue reference="6Mc-nU-dn2"/>
+        <segue reference="GvZ-G2-KiY"/>
         <segue reference="Nh7-vF-trw"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1097,6 +1125,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
