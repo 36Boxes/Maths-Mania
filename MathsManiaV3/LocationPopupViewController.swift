@@ -24,7 +24,7 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
     
     var flipper = false
     
-    let counties : [String] = ["Bath and North East Somerset", "Bedfordshire", "Berkshire", "Bristol", "Buckinghamshire", "Cambridgeshire", "Cheshire","Cornwall", "County Durham", "Cumbria","Derbyshire", "Devon", "Dorset","East Riding of Yorkshire", "East Sussex", "Essex","Gloucestershire", "Greater London", "Greater Manchester","Hampshire", "Herefordshire", "Hertfordshire","Isle of Wight", "Isles of Scilly", "Kent","Lancashire", "Leicestershire", "Lincolnshire","Merseyside", "Norfolk", "North Somerset","North Yorkshire", "Northamptonshire", "Northumberland","Nottinghamshire", "Oxfordshire", "Rutland","Shropshire", "Somerset", "South Gloucestershire","South Yorkshire", "Staffordshire", "Suffolk","Surrey", "Tyne & Wear", "Warwickshire","West Midlands" ,"West Sussex", "West Yorkshire","Wiltshire", "Worcestershire"]
+    let counties : [String] = ["Bath and North East Somerset", "Bedfordshire", "Berkshire", "Bristol", "Buckinghamshire", "Cambridgeshire", "Cheshire","Cornwall", "County Durham", "Cumbria","Derbyshire", "Devon", "Dorset","East Riding of Yorkshire", "East Sussex", "Essex","Gloucestershire", "Greater London", "Greater Manchester","Hampshire", "Herefordshire", "Hertfordshire","Isle of Wight", "Isles of Scilly", "Kent","Lancashire", "Leicestershire", "Lincolnshire","Merseyside", "Norfolk", "North Somerset","North Yorkshire", "Northamptonshire", "Northumberland","Nottinghamshire", "Oxfordshire", "Rutland","Shropshire", "Somerset", "South Gloucestershire","South Yorkshire", "Staffordshire", "Suffolk","Surrey", "Tyne & Wear", "Warwickshire","West Midlands" ,"West Sussex", "West Yorkshire","Wiltshire", "Worcestershire", "ROTW"]
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
@@ -85,6 +85,16 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
                     if let place = placemark?[0]{
                         let userCounty = place.subAdministrativeArea
                         for (index, county) in self.counties.enumerated(){
+                            if index == 52{
+                                let locationID = index
+                                UserDefaults.standard.set(locationID, forKey: "LocationID")
+                                self.saveHigh(number: locationID)
+                                startTimer.invalidate()
+                                CalculationLabel.text = "Location Calculated!"
+                                popupbutton.isEnabled = true
+                                popupbutton.setTitle("Continue", for: UIControl.State.normal)
+                                CalculateButton.setTitle("Continue", for: UIControl.State.normal)
+                            }else{
                             if county == userCounty{
                                 // The index number will be our locationID
                                 let locationID = index
@@ -96,7 +106,7 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
                                 popupbutton.setTitle("Continue", for: UIControl.State.normal)
                                 CalculateButton.setTitle("Continue", for: UIControl.State.normal)
                             }
-                            
+                            }
                         }
                         
                     }
