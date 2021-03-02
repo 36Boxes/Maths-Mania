@@ -25,7 +25,6 @@
 		CAD4E2A125DAE12800546FD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */; };
 		CAD4E2AA25DAE45600546FD9 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD4E2A925DAE45600546FD9 /* GameController.framework */; };
 		CAD4E2C025DBEAB100546FD9 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */; };
-		CAD4E2C825DC310600546FD9 /* counties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD4E2C725DC310600546FD9 /* counties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +60,6 @@
 		CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CAD4E2A925DAE45600546FD9 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
-		CAD4E2C725DC310600546FD9 /* counties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = counties.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,7 +116,6 @@
 				CA7019FB259DFBFA0000A3DA /* Info.plist */,
 				CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */,
 				CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */,
-				CAD4E2C725DC310600546FD9 /* counties.swift */,
 				CA38877B25DD4798000A6F91 /* LocationPopupViewController.swift */,
 				CA0800F025EBE74F00610F06 /* NoScorePopupViewController.swift */,
 				CA0800F825ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift */,
@@ -257,7 +254,6 @@
 				CAD4E2C025DBEAB100546FD9 /* LeaderboardViewController.swift in Sources */,
 				CA701A10259DFCDB0000A3DA /* mathsManiaFrontpage.swift in Sources */,
 				CA68448725D1F62300B2063F /* popupViewController.swift in Sources */,
-				CAD4E2C825DC310600546FD9 /* counties.swift in Sources */,
 				CA0800FA25ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,7 +415,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -438,7 +434,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

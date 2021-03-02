@@ -28,7 +28,7 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testBackgroundcopy" translatesAutoresizingMaskIntoConstraints="NO" id="R3J-Ki-0jK">
                                         <rect key="frame" x="5" y="5" width="215" height="452"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRdius">
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
@@ -1112,7 +1112,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="bmD-qP-I2W"/>
-        <segue reference="GvZ-G2-KiY"/>
+        <segue reference="6Mc-nU-dn2"/>
         <segue reference="Nh7-vF-trw"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>

@@ -558,7 +558,7 @@ class mathsManiaSoloMode: UIViewController  {
         // Adding the background to the application
         SoloMode.frame.size.height = SoloMode.frame.size.height - SoloMode.font.descender
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "SoloModeBackground")
+        backgroundImage.image = UIImage(named: "Backdropsolomode")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         
@@ -641,29 +641,3 @@ public extension UIView {
         layer.add(animation, forKey: "shake")
     }
 }
-
-
-
-
-// Notes for next coding session
-
-
-// change start to clear one DONE
-// add something that makes it different types of questions add subtract times divide but some algorithm has to be created for divide DONE
-// sort out ios certificate
-// finish the comments
-// maybe start on leaderboards?
-// high score counter at least DONE
-// see if ads can be manipulated in they can using googleadmob NOT DOING THIS GONNA HAVE DONATION BUTTON
-// new gamemode maybe? 10s and 5s but very quick
-// finish popup aswell more buttons needed DONE
-// done??????????? update pending feb 8th 2021
-// fix the scaling of the minus
-
-
-// to figure out localised leaderboards we are gonna have to do something smart, organise counties to a number that i can recognise as a certain county/area, maybe 27 different county leaderboards? if only we could figure out how to host our own one
-
-
-// make logo spin upon startup if possible?
-
-

@@ -111,7 +111,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
             }
         }
         var rank = indexPath.row
-        // we need to add 1 as index starts at zero
+        // we need to minus 2 as index starts at when the index number is 3
         
         rank = rank - 2
         let pop = String(rank)
@@ -161,13 +161,15 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         tableView.delegate = self
         tableView.dataSource = self
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "4157744")
+        backgroundImage.image = UIImage(named: "leaderboardbackdrop")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         authPlayer()
         load_leaders()
         ReloadButton.isEnabled = false
         ReloadButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        EntireButton.isEnabled = false
+        EntireButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -251,6 +253,8 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
                     }
                     }
                     self.tableView.reloadData()
+                    self.ReloadButton.isEnabled = true
+                    self.EntireButton.isEnabled = true
                 }}
         }}
     }
@@ -353,7 +357,6 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
                     }
                     }
                     }
-                    print(self.Group_Loc_Scores)
                     self.tableView.reloadData()
                 }}
         }}

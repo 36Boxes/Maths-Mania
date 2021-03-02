@@ -85,7 +85,10 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
                     if let place = placemark?[0]{
                         let userCounty = place.subAdministrativeArea
                         for (index, county) in self.counties.enumerated(){
-                            if index == 52{
+                            
+                            // If the index reaches 51 we know the user is not within england
+                            
+                            if index == 51{
                                 let locationID = index
                                 UserDefaults.standard.set(locationID, forKey: "LocationID")
                                 self.saveHigh(number: locationID)
@@ -95,6 +98,9 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
                                 popupbutton.setTitle("Continue", for: UIControl.State.normal)
                                 CalculateButton.setTitle("Continue", for: UIControl.State.normal)
                             }else{
+                                
+                            // Else we want to compare the user county to the counties within our list to decide where the user is
+                                
                             if county == userCounty{
                                 // The index number will be our locationID
                                 let locationID = index
@@ -119,6 +125,8 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
         CalculationLabel.text = "Location Calculated!"
     }
     
+    // Function to save the locationID to the leaderboard
+    
     func saveHigh(number : Int){
         if GKLocalPlayer.local.isAuthenticated{
             let scoreReporter = GKScore(leaderboardIdentifier: "Locations")
@@ -128,11 +136,9 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
 
         }}
     
+    // Function thats called when the CLlocation manager fails to find location
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Failed to find user's location")
+        print("Failed to find the location")
     }
 }
-
-
-
-// add the functonality to see loading up of the location
