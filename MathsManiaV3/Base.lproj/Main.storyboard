@@ -944,6 +944,11 @@
                                             <constraint firstAttribute="width" constant="221" id="ohp-zZ-dgd"/>
                                             <constraint firstAttribute="height" constant="602" id="ynx-5H-cRW"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1T-s5-MRg">
                                         <rect key="frame" x="31" y="50" width="179" height="34"/>
@@ -1223,9 +1228,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Vla-A4-zp1"/>
-        <segue reference="3pC-T9-sSc"/>
-        <segue reference="Nh7-vF-trw"/>
+        <segue reference="cYl-hM-UqO"/>
+        <segue reference="UIK-fx-Frg"/>
+        <segue reference="I18-mk-zhi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>

@@ -10,6 +10,7 @@ import UIKit
 
 class LeaderBoardBreakTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var Label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

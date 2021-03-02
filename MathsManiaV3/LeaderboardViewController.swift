@@ -11,6 +11,8 @@ import GameKit
 
 class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    var Local = true
+    
     @IBOutlet weak var ReloadButton: UIButton!
     @IBOutlet weak var EntireButton: UIButton!
     // The Dictionary that holds our leaderboard info
@@ -31,10 +33,17 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 2{
-            
+            if Local == true{
+                let cell = tableView.dequeueReusableCell(withIdentifier: "breakcell", for: indexPath) as!
+                    LeaderBoardBreakTableViewCell
+                cell.Label.text = "local Leaderboard"
+                return cell
+            }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "breakcell", for: indexPath) as!
                 LeaderBoardBreakTableViewCell
+                cell.Label.text = "Entire Leaderboard"
             return cell
+            }
         }
         if indexPath.row == 1{
             let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as!
@@ -130,6 +139,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
     var highScore:Int = 0
         
     @IBAction func ShowEntireLeaderboard(_ sender: Any) {
+        Local = false
         load_full_leaders()
         EntireButton.isEnabled = false
         EntireButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
@@ -137,6 +147,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
     }
     @IBOutlet weak var tableView: UITableView!
     @IBAction func showlead(_ sender: Any) {
+        Local = true
         load_leaders()
         ReloadButton.isEnabled = false
         ReloadButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
