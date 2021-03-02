@@ -216,6 +216,93 @@
             </objects>
             <point key="canvasLocation" x="1106" y="348"/>
         </scene>
+        <!--Credits View Controller-->
+        <scene sceneID="CnP-dZ-Dvz">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="uCg-uH-stn" customClass="CreditsViewController" customModule="MathsManiaV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H5h-Tv-STV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="131" translatesAutoresizingMaskIntoConstraints="NO" id="Fa1-62-ntj">
+                                <rect key="frame" x="58" y="44" width="298.5" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjv-RR-rVF">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="6ao-0d-PmZ"/>
+                                            <constraint firstAttribute="width" constant="50" id="PKP-EW-3pF"/>
+                                        </constraints>
+                                        <state key="normal" image="GoBackArrow"/>
+                                        <connections>
+                                            <action selector="gobackhome:" destination="uCg-uH-stn" eventType="touchUpInside" id="eVP-4A-gwo"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="exitcredits" modalPresentationStyle="fullScreen" id="3pC-T9-sSc"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credits" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffJ-wi-AUM">
+                                        <rect key="frame" x="181" y="0.0" width="117.5" height="50"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ffJ-wi-AUM" secondAttribute="bottom" constant="-6" id="7YE-24-Xey"/>
+                                    <constraint firstAttribute="height" constant="50" id="8Mg-9S-O6I"/>
+                                    <constraint firstItem="ffJ-wi-AUM" firstAttribute="top" secondItem="Fa1-62-ntj" secondAttribute="top" id="G9A-x5-aG4"/>
+                                    <constraint firstAttribute="trailing" secondItem="ffJ-wi-AUM" secondAttribute="trailing" id="pnh-NH-urn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7YE-24-Xey"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="yeK-ra-fen">
+                                <rect key="frame" x="41" y="307" width="332" height="282.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font Credits go to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFU-Ze-JSV">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="30.5"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="27"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adam-cg-pro-font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YcL-Fh-2O7">
+                                        <rect key="frame" x="0.0" y="90.5" width="332" height="26"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="23"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The background credits go to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5q5-2Z-Sso">
+                                        <rect key="frame" x="0.0" y="176.5" width="332" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="20"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://www.freepik.com " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Zr-uG-vBC">
+                                        <rect key="frame" x="0.0" y="259" width="332" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="21"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FHP-El-ciR"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="yeK-ra-fen" firstAttribute="centerY" secondItem="H5h-Tv-STV" secondAttribute="centerY" id="9mI-Cw-4Gz"/>
+                            <constraint firstItem="yeK-ra-fen" firstAttribute="centerX" secondItem="H5h-Tv-STV" secondAttribute="centerX" id="9o4-Fu-lbp"/>
+                            <constraint firstItem="Fa1-62-ntj" firstAttribute="centerX" secondItem="H5h-Tv-STV" secondAttribute="centerX" id="L39-Zp-geN"/>
+                            <constraint firstItem="Fa1-62-ntj" firstAttribute="top" secondItem="FHP-El-ciR" secondAttribute="top" id="zub-0f-n1W"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fwh-HA-dga" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2082.608695652174" y="-433.25892857142856"/>
+        </scene>
         <!--Maths Mania Frontpage-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -225,7 +312,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="1Rq-K5-OZ5">
-                                <rect key="frame" x="182" y="595.5" width="250" height="105"/>
+                                <rect key="frame" x="182" y="560.5" width="250" height="175"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKD-UU-wld">
                                         <rect key="frame" x="0.0" y="0.0" width="250" height="35"/>
@@ -265,11 +352,36 @@
                                             <action selector="Leaderboards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vCA-FK-cRC"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-ac-gEO">
+                                        <rect key="frame" x="0.0" y="140" width="250" height="35"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="aA7-7f-kjq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="19"/>
+                                        <state key="normal" title="credits">
+                                            <color key="titleColor" systemColor="darkTextColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="Credits:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbn-pY-bui"/>
+                                            <segue destination="uCg-uH-stn" kind="presentation" identifier="showcredits" id="dND-0f-VcM"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Afr-L7-qYi"/>
                                     <constraint firstAttribute="height" constant="105" id="FMM-HA-mhT"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FMM-HA-mhT"/>
+                                    </mask>
+                                </variation>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -1111,8 +1223,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bmD-qP-I2W"/>
-        <segue reference="6Mc-nU-dn2"/>
+        <segue reference="Vla-A4-zp1"/>
+        <segue reference="3pC-T9-sSc"/>
         <segue reference="Nh7-vF-trw"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1128,6 +1240,9 @@
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

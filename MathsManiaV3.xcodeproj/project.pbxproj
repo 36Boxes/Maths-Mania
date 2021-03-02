@@ -22,6 +22,7 @@
 		CA701A10259DFCDB0000A3DA /* mathsManiaFrontpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA701A0F259DFCDB0000A3DA /* mathsManiaFrontpage.swift */; };
 		CA701A1225A617F80000A3DA /* ADAM.CGPRO.otf in Resources */ = {isa = PBXBuildFile; fileRef = CA701A1125A617F80000A3DA /* ADAM.CGPRO.otf */; };
 		CA701A1425A61AB10000A3DA /* mathsManiaSoloMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA701A1325A61AB10000A3DA /* mathsManiaSoloMode.swift */; };
+		CA879DA225EEA119009E0745 /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA879DA125EEA119009E0745 /* CreditsViewController.swift */; };
 		CAD4E2A125DAE12800546FD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */; };
 		CAD4E2AA25DAE45600546FD9 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD4E2A925DAE45600546FD9 /* GameController.framework */; };
 		CAD4E2C025DBEAB100546FD9 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */; };
@@ -57,6 +58,7 @@
 		CA701A0F259DFCDB0000A3DA /* mathsManiaFrontpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathsManiaFrontpage.swift; sourceTree = "<group>"; };
 		CA701A1125A617F80000A3DA /* ADAM.CGPRO.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ADAM.CGPRO.otf; path = "../../../../Downloads/ADAMCGPRO - SHRENIK-2/Font_Files_ADAM_CG_Pro/ADAM.CGPRO.otf"; sourceTree = "<group>"; };
 		CA701A1325A61AB10000A3DA /* mathsManiaSoloMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mathsManiaSoloMode.swift; sourceTree = "<group>"; };
+		CA879DA125EEA119009E0745 /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CAD4E2A925DAE45600546FD9 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				CA0800F025EBE74F00610F06 /* NoScorePopupViewController.swift */,
 				CA0800F825ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift */,
 				CA0800F925ED30F600610F06 /* LeaderBoardBreakTableViewCell.xib */,
+				CA879DA125EEA119009E0745 /* CreditsViewController.swift */,
 			);
 			path = MathsManiaV3;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				CA701A10259DFCDB0000A3DA /* mathsManiaFrontpage.swift in Sources */,
 				CA68448725D1F62300B2063F /* popupViewController.swift in Sources */,
 				CA0800FA25ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift in Sources */,
+				CA879DA225EEA119009E0745 /* CreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

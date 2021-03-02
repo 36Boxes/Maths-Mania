@@ -32,6 +32,9 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func Credits(_ sender: Any) {
+        performSegue(withIdentifier: "showcredits", sender: nil)
+    }
     // Function for proceeding to the solo mode
 
     @IBAction func SoloMode(_ sender: Any) {
