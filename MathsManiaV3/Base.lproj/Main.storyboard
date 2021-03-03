@@ -1007,6 +1007,9 @@
                                                         <state key="normal" title="1">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="Zkj-6a-x5p"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1031,6 +1034,9 @@
                                                         <state key="normal" title="2">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="klO-G9-bns"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1055,6 +1061,9 @@
                                                         <state key="normal" title="3">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="s1a-Ag-Tdt"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1090,6 +1099,9 @@
                                                         <state key="normal" title="4">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="srU-gZ-gNg"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1114,6 +1126,9 @@
                                                         <state key="normal" title="5">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="CuD-4k-QuO"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1138,6 +1153,9 @@
                                                         <state key="normal" title="6">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="Ozq-de-Xeo"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1167,6 +1185,9 @@
                                                         <state key="normal" title="7">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="7UZ-rJ-Fi0"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1191,6 +1212,9 @@
                                                         <state key="normal" title="8">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="3lg-nF-n3Q"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1215,6 +1239,9 @@
                                                         <state key="normal" title="9">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="mGn-dt-1O7"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1246,6 +1273,9 @@
                                                         <state key="normal" title="Clear">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="ClearAnswerBox:" destination="tHZ-RV-W81" eventType="touchUpInside" id="xKa-TG-ZxW"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1275,6 +1305,9 @@
                                                                 <integer key="value" value="25"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="AddNumber:" destination="tHZ-RV-W81" eventType="touchUpInside" id="z7u-1D-qXa"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1301,6 +1334,9 @@
                                                         <state key="normal" title="Start">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="StartButton:" destination="tHZ-RV-W81" eventType="touchUpInside" id="w65-Gq-PUh"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.7355627159" green="1" blue="0.42502747190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1470,6 +1506,25 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="AnswerBox" destination="uDT-xu-5GC" id="yqR-Uj-6S9"/>
+                        <outlet property="Button0" destination="MkU-dU-tYP" id="A7t-3c-7O9"/>
+                        <outlet property="Button1" destination="qKh-FI-OAW" id="ANI-wS-6zH"/>
+                        <outlet property="Button2" destination="Wxo-Bp-Pit" id="pGB-Ug-64j"/>
+                        <outlet property="Button3" destination="qwy-cQ-Cqo" id="frV-mH-qiP"/>
+                        <outlet property="Button4" destination="yFW-Qa-NcR" id="AB8-0N-jUp"/>
+                        <outlet property="Button5" destination="w2E-PN-kpq" id="zaK-2d-oXW"/>
+                        <outlet property="Button6" destination="ERr-Yq-Mvs" id="apr-qh-jdS"/>
+                        <outlet property="Button7" destination="78H-6B-qRq" id="Xbg-86-mN1"/>
+                        <outlet property="Button8" destination="wzn-K0-MLe" id="bBO-ic-ZJp"/>
+                        <outlet property="Button9" destination="oi9-Yr-Z2W" id="6TR-m6-NSu"/>
+                        <outlet property="ClearButton" destination="jdl-Q3-CHv" id="ePJ-s7-CYC"/>
+                        <outlet property="NumberOne" destination="0zg-Xh-4f3" id="Nm7-pM-Y02"/>
+                        <outlet property="NumberTwo" destination="cWA-M0-3QC" id="HWT-la-sDg"/>
+                        <outlet property="Operator" destination="5G3-O7-j5N" id="TCG-Tc-Hv1"/>
+                        <outlet property="QuickFireModeTitle" destination="R7y-zG-VYv" id="qh4-Zb-2tR"/>
+                        <outlet property="StartButton" destination="kNr-fe-FIE" id="Bve-Il-L8D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG6-vA-Rq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
