@@ -97,6 +97,7 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
                                 popupbutton.isEnabled = true
                                 popupbutton.setTitle("Continue", for: UIControl.State.normal)
                                 CalculateButton.setTitle("Continue", for: UIControl.State.normal)
+                                break
                             }else{
                                 
                             // Else we want to compare the user county to the counties within our list to decide where the user is
@@ -111,6 +112,7 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
                                 popupbutton.isEnabled = true
                                 popupbutton.setTitle("Continue", for: UIControl.State.normal)
                                 CalculateButton.setTitle("Continue", for: UIControl.State.normal)
+                                break
                             }
                             }
                         }

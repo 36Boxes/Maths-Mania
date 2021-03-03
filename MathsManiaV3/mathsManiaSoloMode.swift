@@ -558,7 +558,7 @@ class mathsManiaSoloMode: UIViewController  {
         // Adding the background to the application
         SoloMode.frame.size.height = SoloMode.frame.size.height - SoloMode.font.descender
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Backdropsolomode")
+        backgroundImage.image = UIImage(named: "Leaderboard")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         

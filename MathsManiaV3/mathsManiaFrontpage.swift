@@ -47,6 +47,9 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate {
         performSegue(withIdentifier: "leaderboard", sender: nil)
     }
     
+    @IBAction func QuickFireMode(_ sender: Any) {
+        performSegue(withIdentifier: "operatorselect", sender: nil)
+    }
     
     
     
@@ -54,7 +57,7 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate {
         super.viewDidLoad()
         // Adding the background to the application
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Backdropexported")
+        backgroundImage.image = UIImage(named: "FrontPage")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         

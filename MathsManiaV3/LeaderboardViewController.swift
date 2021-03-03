@@ -172,7 +172,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         tableView.delegate = self
         tableView.dataSource = self
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "leaderboardbackdrop")
+        backgroundImage.image = UIImage(named: "Credits")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         authPlayer()
