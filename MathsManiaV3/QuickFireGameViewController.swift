@@ -38,6 +38,14 @@ class QuickFireGameViewController: UIViewController {
     
     var extraSeconds = 5.0
     
+    // a var to hold the question the user faces
+    
+    var QuestionFaced = ""
+    
+    // Variable for holding the correct answer for the users question
+    
+    var CorrectAnswer = 0
+    
     // Timer that controlls the checking of answers
     
     var GameTimer: Timer!
@@ -144,7 +152,10 @@ class QuickFireGameViewController: UIViewController {
             // Enable buttons so user can play
             enableButtons()
             AnswerBox.text = ""
-            
+            if GameMode == "Plus"{genQuestionPlus()}
+            if GameMode == "Minus"{genQuestionMinus()}
+            if GameMode == "Divide"{genQuestionDivide()}
+            if GameMode == "Multiply"{genQuestionMultiply()}
             SecondsTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ChangeSeconds), userInfo: nil, repeats: true)
             GameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(checkAnswer), userInfo: nil, repeats: true)
             
@@ -152,16 +163,123 @@ class QuickFireGameViewController: UIViewController {
         
     }
     
-    func genQuestion(){
-        
-        
-        
-        // Generate 4 random numbers so I can concat them together to form a question
+    // Function that generates a random addition question
+    
+    func genQuestionPlus(){
         
         let firstInt = Int.random(in: 1..<10)
         let secondInt = Int.random(in: 0..<10)
         let thirdInt = Int.random(in: 1..<10)
         let fourthInt = Int.random(in: 0..<10)
+        
+        let numberOne_text = String(firstInt) + String(secondInt)
+        let numberTwo_text = String(thirdInt) + String(fourthInt)
+        
+        let numberOne_int = Int(numberOne_text)!
+        let numberTwo_int = Int(numberTwo_text)!
+        
+        // Find the bigger number and place that first
+        
+        if numberOne_int > numberTwo_int{
+            NumberOne.text = numberOne_text
+            NumberTwo.text = numberTwo_text
+            Operator.image = UIImage(named:"Plus")
+            CorrectAnswer = numberOne_int + numberTwo_int
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberOne_text + " " + "+" + " " + numberTwo_text + " " + "=" + " " + str_ans
+        }else{
+            NumberOne.text = numberTwo_text
+            NumberTwo.text = numberOne_text
+            Operator.image = UIImage(named:"Plus")
+            CorrectAnswer = numberOne_int + numberTwo_int
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberTwo_text + " " + "+" + " " + numberOne_text + " " + "=" + " " + str_ans
+        }
+    }
+    
+    func genQuestionMinus(){
+        
+        let firstInt = Int.random(in: 1..<10)
+        let secondInt = Int.random(in: 0..<10)
+        let thirdInt = Int.random(in: 1..<10)
+        let fourthInt = Int.random(in: 0..<10)
+        
+        let numberOne_text = String(firstInt) + String(secondInt)
+        let numberTwo_text = String(thirdInt) + String(fourthInt)
+        
+        let numberOne_int = Int(numberOne_text)!
+        let numberTwo_int = Int(numberTwo_text)!
+        
+        // Find the bigger number and place that first
+        
+        if numberOne_int > numberTwo_int{
+            NumberOne.text = numberOne_text
+            NumberTwo.text = numberTwo_text
+            Operator.image = UIImage(named:"Minus")
+            CorrectAnswer = numberOne_int - numberTwo_int
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberOne_text + " " + "-" + " " + numberTwo_text + " " + "=" + " " + str_ans
+        }else{
+            NumberOne.text = numberTwo_text
+            NumberTwo.text = numberOne_text
+            Operator.image = UIImage(named:"Minus")
+            CorrectAnswer = numberOne_int - numberTwo_int
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberTwo_text + " " + "-" + " " + numberOne_text + " " + "=" + " " + str_ans
+        }
+    }
+    
+    func genQuestionDivide(){
+        let numberOne_int = Int.random(in: 1..<13)
+        let numberTwo_int = Int.random(in: 0..<13)
+        let numberOne_text = String(numberOne_int)
+        let numberTwo_text = String(numberTwo_int)
+        
+        // Find the bigger number
+        
+        if numberOne_int > numberTwo_int{
+            let numberThree_int = numberOne_int * numberTwo_int
+            let numberThree_text = String(numberThree_int)
+            NumberOne.text = numberThree_text
+            NumberTwo.text = numberOne_text
+            Operator.image = UIImage(named:"Divide")
+            CorrectAnswer = numberTwo_int
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberThree_text + " " + "/" + " " + numberOne_text + " " + "=" + " " + str_ans
+            
+        }else{
+            let numberThree_int = numberOne_int * numberTwo_int
+            let numberThree_text = String(numberThree_int)
+            NumberOne.text = numberThree_text
+            NumberTwo.text = numberTwo_text
+            Operator.image = UIImage(named:"Divide")
+            CorrectAnswer = numberOne_int
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberThree_text + " " + "/" + " " + numberTwo_text + " " + "=" + " " + str_ans
+        }
+    }
+    
+    func genQuestionMultiply(){
+        let numberOne_int = Int.random(in: 0..<13)
+        let numberTwo_int = Int.random(in: 0..<13)
+        let numberOne_text = String(numberOne_int)
+        let numberTwo_text = String(numberTwo_int)
+        
+        if numberOne_int > numberTwo_int{
+            NumberOne.text = numberOne_text
+            NumberTwo.text = numberTwo_text
+            CorrectAnswer = numberOne_int * numberTwo_int
+            Operator.image = UIImage(named:"Times")
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberOne_text + " " + "x" + " " + numberTwo_text + " " + "=" + " " + str_ans
+        }else{
+            NumberOne.text = numberTwo_text
+            NumberTwo.text = numberOne_text
+            CorrectAnswer = numberOne_int * numberTwo_int
+            Operator.image = UIImage(named:"Times")
+            let str_ans = String(CorrectAnswer)
+            QuestionFaced = numberTwo_text + " " + "x" + " " + numberOne_text + " " + "=" + " " + str_ans
+        }
     }
   
     @objc func checkAnswer(){
