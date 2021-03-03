@@ -985,11 +985,11 @@
             <objects>
                 <viewController id="tHZ-RV-W81" customClass="QuickFireGameViewController" customModule="MathsManiaV3" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="86T-Ii-JGp">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="PaH-8C-txe">
-                                <rect key="frame" x="0.0" y="318" width="414" height="490"/>
+                                <rect key="frame" x="0.0" y="372" width="414" height="490"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="IGz-jx-06I">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
@@ -1429,7 +1429,7 @@
                                 </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VcZ-3U-9m1">
-                                <rect key="frame" x="10" y="0.0" width="50" height="50"/>
+                                <rect key="frame" x="10" y="44" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="HTm-Yz-png"/>
                                     <constraint firstAttribute="height" constant="50" id="ozc-Iy-8kN"/>
@@ -1440,7 +1440,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Fire Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-zG-VYv">
-                                <rect key="frame" x="148.5" y="10" width="237" height="30.5"/>
+                                <rect key="frame" x="148.5" y="54" width="237" height="30.5"/>
                                 <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1536,6 +1536,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0g-Eh-nkv">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                                                         <state key="normal" title=" "/>
+                                                        <connections>
+                                                            <action selector="Minus:" destination="Xuf-JW-fQh" eventType="touchUpInside" id="pi3-4m-tFu"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKp-0C-5Ln">
                                                         <rect key="frame" x="22" y="53" width="76" height="14"/>
@@ -1588,7 +1591,7 @@
                                                         <state key="normal" title="Button" image="Divide"/>
                                                         <connections>
                                                             <action selector="Divide:" destination="Xuf-JW-fQh" eventType="touchUpInside" id="L6b-zM-3NP"/>
-                                                            <segue destination="tHZ-RV-W81" kind="presentation" identifier="quickfiredivide" id="Vwv-aU-Xub"/>
+                                                            <segue destination="tHZ-RV-W81" kind="presentation" identifier="quickfiredivide" modalPresentationStyle="fullScreen" id="Vwv-aU-Xub"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1617,7 +1620,7 @@
                                                         <state key="normal" title="Button" image="Times"/>
                                                         <connections>
                                                             <action selector="Multiply:" destination="Xuf-JW-fQh" eventType="touchUpInside" id="D2J-Ua-3Oa"/>
-                                                            <segue destination="tHZ-RV-W81" kind="presentation" identifier="quickfiremultiply" id="nrf-w1-oSt"/>
+                                                            <segue destination="tHZ-RV-W81" kind="presentation" identifier="quickfiremultiply" modalPresentationStyle="fullScreen" id="nrf-w1-oSt"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1650,7 +1653,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="All:" destination="Xuf-JW-fQh" eventType="touchUpInside" id="T5J-5g-aSE"/>
-                                            <segue destination="tHZ-RV-W81" kind="presentation" identifier="quickfireall" id="0UY-3e-Jqi"/>
+                                            <segue destination="tHZ-RV-W81" kind="presentation" identifier="quickfireall" modalPresentationStyle="fullScreen" id="0UY-3e-Jqi"/>
                                         </connections>
                                     </button>
                                 </subviews>

@@ -34,6 +34,31 @@ class OperatorSelect: UIViewController {
         self.view.insertSubview(backgroundImage, at: 0)
     }
     
+    // We want to pass what gamemode was selected so we filter it out via the segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender : Any?){
+        if segue.identifier == "gotoquickfireplus"{
+            let destination = segue.destination as! QuickFireGameViewController
+            destination.GameMode = "Plus"
+        }
+        if segue.identifier == "quickfireminus"{
+            let destination = segue.destination as! QuickFireGameViewController
+            destination.GameMode = "Minus"
+        }
+        if segue.identifier == "quickfiredivide"{
+            let destination = segue.destination as! QuickFireGameViewController
+            destination.GameMode = "Divide"
+        }
+        if segue.identifier == "quickfiremultiply"{
+            let destination = segue.destination as! QuickFireGameViewController
+            destination.GameMode = "Multiply"
+        }
+        if segue.identifier == "quickfireall"{
+            let destination = segue.destination as! QuickFireGameViewController
+            destination.GameMode = "All"
+        }
+    }
+    
 
 
 

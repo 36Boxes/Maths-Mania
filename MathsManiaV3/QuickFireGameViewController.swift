@@ -10,6 +10,8 @@ import UIKit
 
 class QuickFireGameViewController: UIViewController {
 
+    var GameMode = String()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Adding the background to the application
@@ -17,6 +19,7 @@ class QuickFireGameViewController: UIViewController {
         backgroundImage.image = UIImage(named: "Leaderboard")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        print(GameMode)
     }
     
 
