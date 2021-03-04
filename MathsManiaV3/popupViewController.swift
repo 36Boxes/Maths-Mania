@@ -12,7 +12,13 @@ import GoogleMobileAds
 
 class popupViewController: UIViewController, GKGameCenterControllerDelegate{
     
-    
+    private let banner: GADBannerView = {
+        let banner = GADBannerView()
+        banner.adUnitID = "ca-app-pub-6767422419955516/1145929040"
+        banner.load(GADRequest())
+        banner.backgroundColor = UIColor.systemRed
+        return banner
+    }()
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
@@ -47,6 +53,7 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
     @IBAction func soloMode(_ sender: Any) {
     }
     override func viewDidLoad() {
+        super.viewDidLoad()
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -57,7 +64,9 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
         qFaced.text = QFaced
         mostHigh.text = high
         saveHigh(number: highScore)
-        super.viewDidLoad()
+        banner.rootViewController = self
+        banner.adSize = kGADAdSizeBanner
+        view.addSubview(banner)
     }
     
     func saveHigh(number : Int){
@@ -68,5 +77,10 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
             GKScore.report(ScoreArray, withCompletionHandler: nil)
 
         }}
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        banner.frame = CGRect(x:0, y: view.frame.size.height-50, width: view.frame.size.width, height: 50)
+    }
 
 }

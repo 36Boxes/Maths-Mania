@@ -5,16 +5,9 @@
 	<key>GADIsAdManagerApp</key>
 	<true/>
 	<key>GADApplicationIdentifier</key>
-	<string>ca-app-pub-6767422419955516~2186073192</string>
-	<key>SKAdNetworkItems</key>
-	<array>
-		<dict>
-			<key>SKAdNetworkIdentifier</key>
-			<string>cstr6suwn9.skadnetwork</string>
-		</dict>
-	</array>
+	<string>ca-app-pub-6767422419955516~1720644116</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>en_GB</string>
 	<key>CFBundleDisplayName</key>
 	<string>Maths Mania</string>
 	<key>CFBundleExecutable</key>
