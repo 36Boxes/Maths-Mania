@@ -27,6 +27,8 @@
 		CAA34CFB25EFCDF100AA0D03 /* OperatorSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA34CFA25EFCDF100AA0D03 /* OperatorSelect.swift */; };
 		CAA34D0125F0680A00AA0D03 /* QuickFirePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA34D0025F0680A00AA0D03 /* QuickFirePopUp.swift */; };
 		CAADEB7425F1077C00DFC4C9 /* DifficultySelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAADEB7325F1077C00DFC4C9 /* DifficultySelect.swift */; };
+		CAADEB7825F12E2D00DFC4C9 /* LeaderboardSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAADEB7725F12E2D00DFC4C9 /* LeaderboardSelector.swift */; };
+		CAADEB7C25F138B800DFC4C9 /* LeaderboardDifficulty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAADEB7B25F138B800DFC4C9 /* LeaderboardDifficulty.swift */; };
 		CAD4E2A125DAE12800546FD9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */; };
 		CAD4E2AA25DAE45600546FD9 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAD4E2A925DAE45600546FD9 /* GameController.framework */; };
 		CAD4E2C025DBEAB100546FD9 /* LeaderboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */; };
@@ -67,6 +69,8 @@
 		CAA34CFA25EFCDF100AA0D03 /* OperatorSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorSelect.swift; sourceTree = "<group>"; };
 		CAA34D0025F0680A00AA0D03 /* QuickFirePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFirePopUp.swift; sourceTree = "<group>"; };
 		CAADEB7325F1077C00DFC4C9 /* DifficultySelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultySelect.swift; sourceTree = "<group>"; };
+		CAADEB7725F12E2D00DFC4C9 /* LeaderboardSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardSelector.swift; sourceTree = "<group>"; };
+		CAADEB7B25F138B800DFC4C9 /* LeaderboardDifficulty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardDifficulty.swift; sourceTree = "<group>"; };
 		CAD4E2A025DAE12800546FD9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CAD4E2A925DAE45600546FD9 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		CAD4E2BF25DBEAB100546FD9 /* LeaderboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 				CAA34CFA25EFCDF100AA0D03 /* OperatorSelect.swift */,
 				CAA34D0025F0680A00AA0D03 /* QuickFirePopUp.swift */,
 				CAADEB7325F1077C00DFC4C9 /* DifficultySelect.swift */,
+				CAADEB7725F12E2D00DFC4C9 /* LeaderboardSelector.swift */,
+				CAADEB7B25F138B800DFC4C9 /* LeaderboardDifficulty.swift */,
 			);
 			path = MathsManiaV3;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 				CA030B7225E0056F0031D832 /* TableViewCell.swift in Sources */,
 				CA7019F0259DFBF90000A3DA /* AppDelegate.swift in Sources */,
 				CAA34D0125F0680A00AA0D03 /* QuickFirePopUp.swift in Sources */,
+				CAADEB7825F12E2D00DFC4C9 /* LeaderboardSelector.swift in Sources */,
 				CA701A1425A61AB10000A3DA /* mathsManiaSoloMode.swift in Sources */,
 				CAA34CF525EFCC5F00AA0D03 /* QuickFireGameViewController.swift in Sources */,
 				CA0800F125EBE74F00610F06 /* NoScorePopupViewController.swift in Sources */,
@@ -274,6 +281,7 @@
 				CA68448725D1F62300B2063F /* popupViewController.swift in Sources */,
 				CA0800FA25ED30F600610F06 /* LeaderBoardBreakTableViewCell.swift in Sources */,
 				CAA34CFB25EFCDF100AA0D03 /* OperatorSelect.swift in Sources */,
+				CAADEB7C25F138B800DFC4C9 /* LeaderboardDifficulty.swift in Sources */,
 				CA879DA225EEA119009E0745 /* CreditsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,7 +443,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -454,7 +462,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7;
+				MARKETING_VERSION = 1.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshmanik.MathsManiaV3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

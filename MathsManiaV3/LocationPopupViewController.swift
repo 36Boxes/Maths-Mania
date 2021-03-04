@@ -41,7 +41,7 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
     @IBOutlet weak var CalculateButton: UIButton!
     @IBAction func getLocation(_ sender: Any) {
         if popupbutton.currentTitle == "Continue"{
-            performSegue(withIdentifier: "location_figured_out", sender: nil)
+            performSegue(withIdentifier: "removepopup", sender: nil)
             location_calculated = true
         }else{
         getUserCounty()

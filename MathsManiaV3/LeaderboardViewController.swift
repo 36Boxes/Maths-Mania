@@ -13,6 +13,8 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
     
     var Local = true
     
+    var LeaderboardIdentifier = String()
+    
     @IBOutlet weak var ReloadButton: UIButton!
     @IBOutlet weak var EntireButton: UIButton!
     // The Dictionary that holds our leaderboard info
@@ -137,12 +139,22 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
 
     
     var highScore:Int = 0
-    var highScorePlus:Int = 0
-    var highScoreMinus:Int = 0
-    var highScoreDivide:Int = 0
-    var highScoreMultiply:Int = 0
-    var highScoreAll:Int = 0
-        
+    var highScorePlusEasy:Int = 0
+    var highScorePlusMedium:Int = 0
+    var highScorePlusHard:Int = 0
+    var highScoreMinusEasy:Int = 0
+    var highScoreMinusMedium:Int = 0
+    var highScoreMinusHard:Int = 0
+    var highScoreDivideEasy:Int = 0
+    var highScoreDivideMedium:Int = 0
+    var highScoreDivideHard:Int = 0
+    var highScoreMultiplyEasy:Int = 0
+    var highScoreMultiplyMedium:Int = 0
+    var highScoreMultiplyHard:Int = 0
+    var highScoreAllEasy:Int = 0
+    var highScoreAllMedium:Int = 0
+    var highScoreAllHard:Int = 0
+
     @IBAction func ShowEntireLeaderboard(_ sender: Any) {
         Local = false
         load_full_leaders()
@@ -158,7 +170,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         ReloadButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
         EntireButton.isEnabled = true
     }
-    @IBAction func GoBackHome(_ sender: Any) {performSegue(withIdentifier: "backfrontleaderboard", sender: nil)}
+    @IBAction func GoBackHome(_ sender: Any) {performSegue(withIdentifier: "gobacktoselector", sender: nil)}
     
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
@@ -191,6 +203,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         } else {
             // Fallback on earlier versions
         }
+        
 
 
     }
@@ -204,7 +217,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         Locations.identifier = "Locations"
         let Scores : GKLeaderboard = GKLeaderboard()
         Scores.timeScope = .allTime
-        Scores.identifier = "Scores"
+        Scores.identifier = LeaderboardIdentifier
         Scores.loadScores { scores, error in
             guard let scores = scores else {return}
         // load all the leaderboard scores and check to see if the user has set a locationID before the view loads
@@ -313,7 +326,7 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
         Locations.identifier = "Locations"
         let Scores : GKLeaderboard = GKLeaderboard()
         Scores.timeScope = .allTime
-        Scores.identifier = "Scores"
+        Scores.identifier = LeaderboardIdentifier
         Scores.loadScores { scores, error in
             guard let scores = scores else {return}
         // load all the leaderboard scores and check to see if the user has set a locationID before the view loads

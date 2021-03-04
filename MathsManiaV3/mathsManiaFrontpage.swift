@@ -44,7 +44,7 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate {
     // Function for proceeding to the leaderboards
     
     @IBAction func Leaderboards(_ sender: Any) {
-        performSegue(withIdentifier: "leaderboard", sender: nil)
+        performSegue(withIdentifier: "gototleaderboardselector", sender: nil)
     }
     
     @IBAction func QuickFireMode(_ sender: Any) {

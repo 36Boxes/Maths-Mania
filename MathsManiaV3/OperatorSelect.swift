@@ -43,22 +43,27 @@ class OperatorSelect: UIViewController {
         if segue.identifier == "gotoquickfireplus"{
             let destination = segue.destination as! QuickFireGameViewController
             destination.GameMode = "Plus"
+            destination.Difficulty = Difficulty
         }
         if segue.identifier == "quickfireminus"{
             let destination = segue.destination as! QuickFireGameViewController
             destination.GameMode = "Minus"
+            destination.Difficulty = Difficulty
         }
         if segue.identifier == "quickfiredivide"{
             let destination = segue.destination as! QuickFireGameViewController
             destination.GameMode = "Divide"
+            destination.Difficulty = Difficulty
         }
         if segue.identifier == "quickfiremultiply"{
             let destination = segue.destination as! QuickFireGameViewController
             destination.GameMode = "Multiply"
+            destination.Difficulty = Difficulty
         }
         if segue.identifier == "quickfireall"{
             let destination = segue.destination as! QuickFireGameViewController
             destination.GameMode = "All"
+            destination.Difficulty = Difficulty
         }
     }
     

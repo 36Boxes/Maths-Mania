@@ -34,11 +34,11 @@ class DifficultySelect: UIViewController {
             destination.Difficulty = "Hard"
         }
         if segue.identifier == "mediummode"{
-            let destination = segue.destination as! QuickFireGameViewController
+            let destination = segue.destination as! OperatorSelect
             destination.Difficulty = "Medium"
         }
         if segue.identifier == "easymode"{
-            let destination = segue.destination as! QuickFireGameViewController
+            let destination = segue.destination as! OperatorSelect
             destination.Difficulty = "Easy"
         }
     }

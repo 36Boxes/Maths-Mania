@@ -150,6 +150,9 @@ class QuickFireGameViewController: UIViewController {
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
         if GameMode == "All"{gameModeIsAll = true}
+        if Difficulty == "Hard"{extraSeconds = 5}
+        if Difficulty == "Medium"{extraSeconds = 10}
+        if Difficulty == "Easy"{extraSeconds = 15}
         disableButtons()
     }
     
@@ -187,11 +190,8 @@ class QuickFireGameViewController: UIViewController {
             enableButtons()
             AnswerBox.text = ""
             genQuestions()
-            if Difficulty == "Hard"{extraSeconds = 5}
-            if Difficulty == "Medium"{extraSeconds = 10}
-            if Difficulty == "Easy"{extraSeconds = 15}
             SecondsTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(ChangeSeconds), userInfo: nil, repeats: true)
-            GameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(checkAnswer), userInfo: nil, repeats: true)
+            GameTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkAnswer), userInfo: nil, repeats: true)
             
         }
         
@@ -199,8 +199,15 @@ class QuickFireGameViewController: UIViewController {
     
     @objc func ChangeSeconds(){
         extraSeconds = extraSeconds - 0.01
+        if Difficulty == "Hard"{
         if extraSeconds > 7.5{extraSeconds = 7.5}
-        
+        }
+        if Difficulty == "Medium"{
+            if extraSeconds > 10{extraSeconds = 10}
+        }
+        if Difficulty == "Easy"{
+            if extraSeconds > 17{extraSeconds = 17}
+        }
         let str_Seconds = String(extraSeconds)
         
         // for some reason it doesnt like doing - 0.01 so i just get the first 4 digits instead to clean it up
@@ -215,6 +222,8 @@ class QuickFireGameViewController: UIViewController {
         let orange = hexStringToUIColor(hex: "#e8992a")
         let orangeRed = hexStringToUIColor(hex: "#e6671e")
         let red = hexStringToUIColor(hex: "#e8291c")
+        
+        let UserAnswer = Int(Answer2Question)
 
         
         if extraSeconds > 4.6 {QuickFireModeTitle.textColor = darkGreen}
@@ -227,6 +236,20 @@ class QuickFireGameViewController: UIViewController {
             QuickFireModeTitle.shakeit()}
         else if extraSeconds > 1.2 {QuickFireModeTitle.textColor = red
             QuickFireModeTitle.shakeit()}
+        else if extraSeconds < 0{
+            if UserAnswer == CorrectAnswer{
+                AddSeconds()
+                AnswerBox.text = ""
+                Answer2Question = ""
+                userScore += 1
+                genQuestions()
+            }else{
+                SecondsTimer.invalidate()
+                QuickFireModeTitle.textColor = UIColor.white
+                QuickFireModeTitle.text = String(0.0)
+            }
+            
+        }
         
     }
     
@@ -393,39 +416,105 @@ class QuickFireGameViewController: UIViewController {
                 genQuestions()
             }else{
                 disableButtons()
-                SecondsTimer.invalidate()
-                extraSeconds = 0
-                QuickFireModeTitle.textColor = UIColor.white
-                QuickFireModeTitle.text = String(extraSeconds)
                 GameTimer.invalidate()
                 let Popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "quickfirepopup") as! QuickFirePopUp
                 let Leader = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Leaderboard") as! LeaderboardViewController
-                if GameMode == "Plus"{previousHighscore = UserDefaults.standard.integer(forKey : "highscorePlus")}
-                if GameMode == "Minus"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMinus")}
-                if GameMode == "Divide"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreDivide")}
-                if GameMode == "Multiply"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMultiply")}
-                if GameMode == "All"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAll")}
+                if GameMode == "Plus"{
+                    if Difficulty == "Hard"{previousHighscore = UserDefaults.standard.integer(forKey : "highscorePlusHard")}
+                    if Difficulty == "Medium"{previousHighscore = UserDefaults.standard.integer(forKey : "highscorePlusMedium")}
+                    if Difficulty == "Easy"{previousHighscore = UserDefaults.standard.integer(forKey : "highscorePlusEasy")}
+                }
+                if GameMode == "Minus"{
+                    if Difficulty == "Hard"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMinusHard")}
+                    if Difficulty == "Medium"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMinusMedium")}
+                    if Difficulty == "Easy"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMinusEasy")}
+                }
+                if GameMode == "Divide"{
+                    if Difficulty == "Hard"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreDivideHard")}
+                    if Difficulty == "Medium"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreDivideMedium")}
+                    if Difficulty == "Easy"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreDivideEasy")}
+                }
+                if GameMode == "Multiply"{
+                    if Difficulty == "Hard"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMultiplyHard")}
+                    if Difficulty == "Medium"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMultiplyMedium")}
+                    if Difficulty == "Easy"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMultiplyEasy")}
+                }
+                if GameMode == "All"{
+                    if Difficulty == "Hard"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAllHard")}
+                    if Difficulty == "Medium"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAllMedium")}
+                    if Difficulty == "Easy"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAllEasy")}
+                }
                 
                 if userScore > previousHighscore{
                     if GameMode == "Plus"{
-                        UserDefaults.standard.set(userScore, forKey: "highscorePlus")
-                        Leader.highScore = UserDefaults.standard.integer(forKey : "highscorePlus")
+                        if Difficulty == "Hard"{
+                            UserDefaults.standard.set(userScore, forKey: "highscorePlusHard")
+                            Leader.highScorePlusHard = UserDefaults.standard.integer(forKey : "highscorePlusHard")
+                        }
+                        if Difficulty == "Medium"{
+                            UserDefaults.standard.set(userScore, forKey: "highscorePlusMedium")
+                            Leader.highScorePlusMedium = UserDefaults.standard.integer(forKey : "highscorePlusMedium")
+                        }
+                        if Difficulty == "Easy"{
+                            UserDefaults.standard.set(userScore, forKey: "highscorePlusEasy")
+                            Leader.highScorePlusEasy = UserDefaults.standard.integer(forKey : "highscorePlusEasy")
+                        }
                     }
                     if GameMode == "Minus"{
-                        UserDefaults.standard.set(userScore, forKey: "highscoreMinus")
-                        Leader.highScore = UserDefaults.standard.integer(forKey : "highscoreMinus")
+                        if Difficulty == "Hard"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreMinusHard")
+                            Leader.highScoreMinusHard = UserDefaults.standard.integer(forKey : "highscoreMinusHard")
+                        }
+                        if Difficulty == "Medium"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreMinusMedium")
+                            Leader.highScoreMinusMedium = UserDefaults.standard.integer(forKey : "highscoreMinusMedium")
+                        }
+                        if Difficulty == "Easy"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreMinusEasy")
+                            Leader.highScoreMinusEasy = UserDefaults.standard.integer(forKey : "highscoreMinusEasy")
+                        }
                     }
                     if GameMode == "Divide"{
-                        UserDefaults.standard.set(userScore, forKey: "highscoreDivide")
-                        Leader.highScore = UserDefaults.standard.integer(forKey : "highscoreDivide")
+                        if Difficulty == "Hard"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreDivideHard")
+                            Leader.highScoreDivideHard = UserDefaults.standard.integer(forKey : "highscoreDivideHard")
+                        }
+                        if Difficulty == "Medium"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreDivideMedium")
+                            Leader.highScoreDivideMedium = UserDefaults.standard.integer(forKey : "highscoreDivideMedium")
+                        }
+                        if Difficulty == "Easy"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreDivideEasy")
+                            Leader.highScoreDivideEasy = UserDefaults.standard.integer(forKey : "highscoreDivideEasy")
+                        }
                     }
                     if GameMode == "Multiply"{
-                        UserDefaults.standard.set(userScore, forKey: "highscoreMultiply")
-                        Leader.highScore = UserDefaults.standard.integer(forKey : "highscoreMultiply")
+                        if Difficulty == "Hard"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreMultiplyHard")
+                            Leader.highScoreMultiplyHard = UserDefaults.standard.integer(forKey : "highscoreMultiplyHard")
+                        }
+                        if Difficulty == "Medium"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreMultiplyMedium")
+                            Leader.highScoreMultiplyMedium = UserDefaults.standard.integer(forKey : "highscoreMultiplyMedium")
+                        }
+                        if Difficulty == "Easy"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreMultiplyEasy")
+                            Leader.highScoreMultiplyEasy = UserDefaults.standard.integer(forKey : "highscoreMultiplyEasy")
+                        }
                     }
                     if GameMode == "All"{
-                        UserDefaults.standard.set(userScore, forKey: "highscoreAll")
-                        Leader.highScore = UserDefaults.standard.integer(forKey : "highscoreAll")
+                        if Difficulty == "Hard"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreAllHard")
+                            Leader.highScoreAllHard = UserDefaults.standard.integer(forKey : "highscoreAllHard")
+                        }
+                        if Difficulty == "Medium"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreAllMedium")
+                            Leader.highScoreAllMedium = UserDefaults.standard.integer(forKey : "highscoreAllMedium")
+                        }
+                        if Difficulty == "Easy"{
+                            UserDefaults.standard.set(userScore, forKey: "highscoreAllEasy")
+                            Leader.highScoreAllEasy = UserDefaults.standard.integer(forKey : "highscoreAllEasy")
+                        }
                     }
                     
                     highScoreBroken = true
@@ -449,6 +538,7 @@ class QuickFireGameViewController: UIViewController {
                     Popup.highscoreSTR = highscorestr
                 }
                 Popup.GameMode = GameMode
+                Popup.Difficulty = Difficulty
                 Popup.qFaced = QuestionFaced
                 Popup.highScore = previousHighscore
                 Popup.userScore = userScore

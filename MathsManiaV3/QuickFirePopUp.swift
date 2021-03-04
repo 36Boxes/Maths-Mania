@@ -44,6 +44,10 @@ class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
     
     var Difficulty = String()
     
+    //
+    
+    var scoreReporter = GKScore()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,18 +55,38 @@ class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
         PrevioushighScore.text = String(highScore)
         QFaced.text = qFaced
         highscoreStr.text = highscoreSTR
-//        saveHigh(number: highScore)
+        saveHigh(number: highScore)
     }
     
 
     func saveHigh(number : Int){
-        var scoreReporter : GKScore
+        
         if GKLocalPlayer.local.isAuthenticated{
-            if GameMode == "Plus"{scoreReporter = GKScore(leaderboardIdentifier: "QuickFireAdditionMode")}
-            if GameMode == "Minus"{}
-            if GameMode == "Divide"{}
-            if GameMode == "Multiply"{}
-            scoreReporter = GKScore(leaderboardIdentifier: "Scores")
+            if GameMode == "Plus"{
+                if Difficulty == "Hard"{scoreReporter = GKScore(leaderboardIdentifier: "NormalAdditionHard")}
+                if Difficulty == "Medium"{scoreReporter = GKScore(leaderboardIdentifier: "NormalAdditionHard")}
+                if Difficulty == "Easy"{scoreReporter = GKScore(leaderboardIdentifier: "NormalAdditionHard")}
+            }
+            if GameMode == "Minus"{
+                if Difficulty == "Hard"{scoreReporter = GKScore(leaderboardIdentifier: "NormalSubtractionHard")}
+                if Difficulty == "Medium"{scoreReporter = GKScore(leaderboardIdentifier: "NormalSubtractionHard")}
+                if Difficulty == "Easy"{scoreReporter = GKScore(leaderboardIdentifier: "NormalSubtractionHard")}
+            }
+            if GameMode == "Divide"{
+                if Difficulty == "Hard"{scoreReporter = GKScore(leaderboardIdentifier: "NormalDivisionHard")}
+                if Difficulty == "Medium"{scoreReporter = GKScore(leaderboardIdentifier: "NormalDivisionHard")}
+                if Difficulty == "Easy"{scoreReporter = GKScore(leaderboardIdentifier: "NormalDivisionHard")}
+            }
+            if GameMode == "Multiply"{
+                if Difficulty == "Hard"{scoreReporter = GKScore(leaderboardIdentifier: "NormalMultiplicationHard")}
+                if Difficulty == "Medium"{scoreReporter = GKScore(leaderboardIdentifier: "NormalMultiplicationHard")}
+                if Difficulty == "Easy"{scoreReporter = GKScore(leaderboardIdentifier: "NormalMultiplicationHard")}
+            }
+            if GameMode == "All"{
+                if Difficulty == "Hard"{scoreReporter = GKScore(leaderboardIdentifier: "NormalAllHard")}
+                if Difficulty == "Medium"{scoreReporter = GKScore(leaderboardIdentifier: "NormalAllHard")}
+                if Difficulty == "Easy"{scoreReporter = GKScore(leaderboardIdentifier: "NormalAllHard")}
+            }
             scoreReporter.value = Int64(number)
             let ScoreArray : [GKScore] = [scoreReporter]
             GKScore.report(ScoreArray, withCompletionHandler: nil)
