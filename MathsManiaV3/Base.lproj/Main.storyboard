@@ -1529,7 +1529,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG6-vA-Rq7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1901.449275362319" y="-1185.2678571428571"/>
+            <point key="canvasLocation" x="-1700" y="-804"/>
         </scene>
         <!--Operator Select-->
         <scene sceneID="jAt-2x-Ve0">
@@ -2058,13 +2058,201 @@
             </objects>
             <point key="canvasLocation" x="-2604" y="348"/>
         </scene>
+        <!--Quick Fire Pop Up-->
+        <scene sceneID="mwQ-mw-3cK">
+            <objects>
+                <viewController storyboardIdentifier="quickfirepopup" id="qOU-nM-Jid" customClass="QuickFirePopUp" customModule="MathsManiaV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3fl-4a-4sz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YH6-qT-fNE">
+                                <rect key="frame" x="86.5" y="137" width="241" height="622"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popup" translatesAutoresizingMaskIntoConstraints="NO" id="hCU-mo-cPL">
+                                        <rect key="frame" x="10" y="10" width="221" height="602"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="602" id="L6A-Wt-3G2"/>
+                                            <constraint firstAttribute="width" constant="221" id="bfr-92-hFc"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXC-Oc-fHd">
+                                        <rect key="frame" x="31" y="50" width="179" height="34"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMY-Zo-8nF">
+                                        <rect key="frame" x="105" y="286" width="31" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="45"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="kO3-vj-4OB">
+                                        <rect key="frame" x="20" y="436" width="201" height="146"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7j-kV-Zdg">
+                                                <rect key="frame" x="0.0" y="0.0" width="201" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                                <state key="normal" title="Play Again!">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="playAgain:" destination="qOU-nM-Jid" eventType="touchUpInside" id="S2h-1z-r7G"/>
+                                                    <segue destination="Xuf-JW-fQh" kind="presentation" identifier="playagainquickfire" modalPresentationStyle="fullScreen" id="1dh-wP-Gfa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pG7-E2-50U">
+                                                <rect key="frame" x="0.0" y="57" width="201" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                                <state key="normal" title="Main Menu">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="mainMenu:" destination="qOU-nM-Jid" eventType="touchUpInside" id="gAQ-z1-z21"/>
+                                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="mainmenuquickfire" modalPresentationStyle="fullScreen" id="pV9-pV-t2w"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iHx-gZ-fAb">
+                                                <rect key="frame" x="0.0" y="114" width="201" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                                <state key="normal" title="Leaderboards">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="leaderboards:" destination="qOU-nM-Jid" eventType="touchUpInside" id="OGS-jx-fdd"/>
+                                                    <segue destination="B3r-hz-VsI" kind="presentation" identifier="gotoleaderboardquickfire" modalPresentationStyle="fullScreen" id="oPi-Hn-F25"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ph9-rD-8Nv">
+                                        <rect key="frame" x="180.5" y="394" width="20.5" height="34"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heR-Cx-HjW">
+                                        <rect key="frame" x="20" y="401.5" width="100" height="19.5"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You Scored" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-p0-g4M">
+                                        <rect key="frame" x="50" y="199" width="142" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AzE-yW-QO2">
+                                        <rect key="frame" x="30.5" y="111" width="180" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 X 99 = 198" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9m-VU-Ua1">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="55"/>
+                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="20"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="y9m-VU-Ua1" firstAttribute="top" secondItem="AzE-yW-QO2" secondAttribute="top" id="9dq-Mv-TOu"/>
+                                            <constraint firstAttribute="trailing" secondItem="y9m-VU-Ua1" secondAttribute="trailing" id="G4E-Fe-oji"/>
+                                            <constraint firstItem="y9m-VU-Ua1" firstAttribute="leading" secondItem="AzE-yW-QO2" secondAttribute="leading" id="MBV-nV-xkN"/>
+                                            <constraint firstAttribute="bottom" secondItem="y9m-VU-Ua1" secondAttribute="bottom" constant="-5" id="N28-bd-9kj"/>
+                                            <constraint firstAttribute="width" constant="180" id="mGo-OZ-TON"/>
+                                            <constraint firstAttribute="height" constant="50" id="vqP-Bd-HCP"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="hCU-mo-cPL" firstAttribute="centerY" secondItem="YH6-qT-fNE" secondAttribute="centerY" id="0v4-yc-Vw6"/>
+                                    <constraint firstAttribute="trailing" secondItem="eXC-Oc-fHd" secondAttribute="trailing" constant="31" id="DpA-nl-E2f"/>
+                                    <constraint firstAttribute="width" constant="241" id="FUZ-ft-kKd"/>
+                                    <constraint firstItem="hCU-mo-cPL" firstAttribute="centerX" secondItem="YH6-qT-fNE" secondAttribute="centerX" id="GRs-mt-8IN"/>
+                                    <constraint firstAttribute="trailing" secondItem="ph9-rD-8Nv" secondAttribute="trailing" constant="40" id="Nm4-8M-MEe"/>
+                                    <constraint firstAttribute="trailing" secondItem="kO3-vj-4OB" secondAttribute="trailing" constant="20" id="U2D-Ev-o0g"/>
+                                    <constraint firstItem="AzE-yW-QO2" firstAttribute="top" relation="lessThanOrEqual" secondItem="eXC-Oc-fHd" secondAttribute="bottom" constant="37" id="aKW-W3-Fah"/>
+                                    <constraint firstItem="gMY-Zo-8nF" firstAttribute="centerX" secondItem="YH6-qT-fNE" secondAttribute="centerX" id="bFp-xL-I9N"/>
+                                    <constraint firstItem="kO3-vj-4OB" firstAttribute="top" secondItem="heR-Cx-HjW" secondAttribute="bottom" constant="15" id="bMA-Yd-hHL"/>
+                                    <constraint firstAttribute="bottom" secondItem="kO3-vj-4OB" secondAttribute="bottom" constant="40" id="dus-Zg-Iek"/>
+                                    <constraint firstItem="heR-Cx-HjW" firstAttribute="leading" secondItem="YH6-qT-fNE" secondAttribute="leading" constant="40" id="ecL-Hy-76W"/>
+                                    <constraint firstItem="eXC-Oc-fHd" firstAttribute="top" secondItem="YH6-qT-fNE" secondAttribute="top" constant="50" id="lZL-AS-Bwn"/>
+                                    <constraint firstItem="kO3-vj-4OB" firstAttribute="leading" secondItem="YH6-qT-fNE" secondAttribute="leading" constant="20" id="oHr-DS-ONh"/>
+                                    <constraint firstItem="gMY-Zo-8nF" firstAttribute="centerY" secondItem="YH6-qT-fNE" secondAttribute="centerY" id="rY8-pr-tti"/>
+                                    <constraint firstItem="AzE-yW-QO2" firstAttribute="centerX" secondItem="YH6-qT-fNE" secondAttribute="centerX" id="rZm-DA-M5F"/>
+                                    <constraint firstItem="heR-Cx-HjW" firstAttribute="leading" secondItem="YH6-qT-fNE" secondAttribute="leading" constant="20" id="sAi-vh-a2Y"/>
+                                    <constraint firstItem="eXC-Oc-fHd" firstAttribute="leading" secondItem="YH6-qT-fNE" secondAttribute="leading" constant="31" id="t4M-dh-0Tu"/>
+                                    <constraint firstAttribute="height" constant="622" id="yOk-D1-I5B"/>
+                                    <constraint firstItem="kO3-vj-4OB" firstAttribute="top" secondItem="ph9-rD-8Nv" secondAttribute="bottom" constant="8" id="zxB-RY-TDS"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ecL-Hy-76W"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fpn-tf-vQb"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YH6-qT-fNE" firstAttribute="centerX" secondItem="3fl-4a-4sz" secondAttribute="centerX" id="TNk-1s-6nT"/>
+                            <constraint firstItem="YH6-qT-fNE" firstAttribute="centerY" secondItem="3fl-4a-4sz" secondAttribute="centerY" id="UR2-TB-lz7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PrevioushighScore" destination="ph9-rD-8Nv" id="ZDH-RZ-ySt"/>
+                        <outlet property="QFaced" destination="y9m-VU-Ua1" id="148-AX-wEc"/>
+                        <outlet property="UserScore" destination="gMY-Zo-8nF" id="91m-lW-S8s"/>
+                        <outlet property="highscoreStr" destination="heR-Cx-HjW" id="6fz-BG-M8Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TuE-Wd-hPt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3526" y="-1185"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kpK-Jm-Rqz"/>
+        <segue reference="1dh-wP-Gfa"/>
         <segue reference="0UY-3e-Jqi"/>
-        <segue reference="Vla-A4-zp1"/>
-        <segue reference="bWf-en-xxU"/>
-        <segue reference="Nh7-vF-trw"/>
+        <segue reference="cYl-hM-UqO"/>
+        <segue reference="pV9-pV-t2w"/>
+        <segue reference="oPi-Hn-F25"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>

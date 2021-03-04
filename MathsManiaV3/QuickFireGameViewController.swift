@@ -62,6 +62,12 @@ class QuickFireGameViewController: UIViewController {
     
     var previousHighscore = 0
     
+    // List of modes used for randomising the question
+    
+    var listOfModes = ["Plus", "Minus", "Divide", "Multiply"]
+    
+    var gameModeIsAll = false
+    
     // For generating random numbers
     
     var numberOne_int = Int()
@@ -138,6 +144,7 @@ class QuickFireGameViewController: UIViewController {
         backgroundImage.image = UIImage(named: "Leaderboard")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        if GameMode == "All"{gameModeIsAll = true}
         disableButtons()
     }
     
@@ -226,6 +233,10 @@ class QuickFireGameViewController: UIViewController {
     // Function that generates a random addition question
     
     func genQuestions(){
+        if gameModeIsAll == true{
+            let selector = Int.random(in: 0..<3)
+            GameMode = listOfModes[selector]
+        }
         if GameMode == "Plus"{genQuestionPlus()}
         if GameMode == "Minus"{genQuestionMinus()}
         if GameMode == "Divide"{genQuestionDivide()}
@@ -374,7 +385,7 @@ class QuickFireGameViewController: UIViewController {
             }else{
                 disableButtons()
                 GameTimer.invalidate()
-                let Popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popup") as! popupViewController
+                let Popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "quickfirepopup") as! QuickFirePopUp
                 let Leader = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Leaderboard") as! LeaderboardViewController
                 if GameMode == "Plus"{previousHighscore = UserDefaults.standard.integer(forKey : "highscorePlus")}
                 if GameMode == "Minus"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMinus")}
@@ -415,13 +426,13 @@ class QuickFireGameViewController: UIViewController {
                         // We want to also tell the user he has a new high score
                         Popup.highScore = previousHighscore
                         let highscorestr = "New High Score!"
-                        Popup.high = highscorestr
+                        Popup.highscoreSTR = highscorestr
                     }else{
                         let highscorestr = "High Score"
-                        Popup.high = highscorestr
+                        Popup.highscoreSTR = highscorestr
                     }
                     
-                    Popup.QFaced = QuestionFaced
+                    Popup.qFaced = QuestionFaced
                     Popup.highScore = previousHighscore
                     Popup.userScore = userScore
                     self.addChild(Popup)
