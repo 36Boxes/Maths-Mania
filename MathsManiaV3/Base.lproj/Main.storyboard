@@ -1475,8 +1475,8 @@
                                     <segue destination="Xuf-JW-fQh" kind="presentation" identifier="backtooperator" modalPresentationStyle="fullScreen" id="kpK-Jm-Rqz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Fire Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-zG-VYv">
-                                <rect key="frame" x="148.5" y="54" width="237" height="30.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Fire Mode" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-zG-VYv">
+                                <rect key="frame" x="118.5" y="54" width="237" height="30.5"/>
                                 <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="27"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1498,7 +1498,7 @@
                             <constraint firstItem="3qS-gy-JAS" firstAttribute="trailing" secondItem="3By-Nd-5XG" secondAttribute="trailing" constant="57" id="gBC-BF-hJt"/>
                             <constraint firstItem="3By-Nd-5XG" firstAttribute="leading" secondItem="3qS-gy-JAS" secondAttribute="leading" constant="57" id="hcR-9e-KJ5"/>
                             <constraint firstItem="R7y-zG-VYv" firstAttribute="centerX" secondItem="86T-Ii-JGp" secondAttribute="centerX" id="slR-f9-SYg"/>
-                            <constraint firstItem="R7y-zG-VYv" firstAttribute="centerX" secondItem="86T-Ii-JGp" secondAttribute="centerX" constant="60" id="xd4-fB-HqC"/>
+                            <constraint firstItem="R7y-zG-VYv" firstAttribute="centerX" secondItem="86T-Ii-JGp" secondAttribute="centerX" constant="30" id="xd4-fB-HqC"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1508,6 +1508,7 @@
                     </view>
                     <connections>
                         <outlet property="AnswerBox" destination="uDT-xu-5GC" id="yqR-Uj-6S9"/>
+                        <outlet property="AnswerViewBox" destination="Mcb-83-f69" id="s3r-aa-CVM"/>
                         <outlet property="Button0" destination="MkU-dU-tYP" id="A7t-3c-7O9"/>
                         <outlet property="Button1" destination="qKh-FI-OAW" id="ANI-wS-6zH"/>
                         <outlet property="Button2" destination="Wxo-Bp-Pit" id="pGB-Ug-64j"/>

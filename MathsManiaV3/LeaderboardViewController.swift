@@ -137,6 +137,11 @@ class LeaderboardViewController: UIViewController, GKGameCenterControllerDelegat
 
     
     var highScore:Int = 0
+    var highScorePlus:Int = 0
+    var highScoreMinus:Int = 0
+    var highScoreDivide:Int = 0
+    var highScoreMultiply:Int = 0
+    var highScoreAll:Int = 0
         
     @IBAction func ShowEntireLeaderboard(_ sender: Any) {
         Local = false
