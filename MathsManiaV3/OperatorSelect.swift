@@ -9,6 +9,9 @@
 import UIKit
 
 class OperatorSelect: UIViewController {
+    
+    var Difficulty = String()
+    
     @IBAction func Plus(_ sender: Any) {
         performSegue(withIdentifier: "gotoquickfireplus", sender: nil)
     }

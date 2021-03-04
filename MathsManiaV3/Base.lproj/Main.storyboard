@@ -330,8 +330,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="QuickFireMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3bU-MB-iwm"/>
-                                            <segue destination="Xuf-JW-fQh" kind="presentation" identifier="operatorselect" modalPresentationStyle="fullScreen" id="Mvi-ly-BKf"/>
+                                            <segue destination="ZWw-XA-yJc" kind="presentation" identifier="choosedifficulty" modalPresentationStyle="fullScreen" id="kek-vE-zPr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKD-UU-wld">
@@ -1736,7 +1735,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="backtohomepage" modalPresentationStyle="fullScreen" id="bWf-en-xxU"/>
+                                    <segue destination="ZWw-XA-yJc" kind="presentation" identifier="gobackdifficulty" modalPresentationStyle="fullScreen" id="2Zf-4e-R6o"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1757,7 +1756,128 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4te-rU-I8t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="VP3-cp-OHK"/>
             </objects>
-            <point key="canvasLocation" x="-620.28985507246387" y="-1185.2678571428571"/>
+            <point key="canvasLocation" x="-1700" y="-1959"/>
+        </scene>
+        <!--Difficulty Select-->
+        <scene sceneID="tcA-FJ-xHB">
+            <objects>
+                <viewController id="ZWw-XA-yJc" customClass="DifficultySelect" customModule="MathsManiaV3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fDg-bK-WKx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-FH-fm6">
+                                <rect key="frame" x="107" y="327" width="200" height="242"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhy-S3-5WM">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="3WT-ya-bNw"/>
+                                            <constraint firstAttribute="height" constant="50" id="K9j-g7-oBi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                        <state key="normal" title="Hard">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="Hardmode:" destination="ZWw-XA-yJc" eventType="touchUpInside" id="Dfg-xy-qLj"/>
+                                            <segue destination="Xuf-JW-fQh" kind="presentation" identifier="hardmode" modalPresentationStyle="fullScreen" id="Qqg-4c-mEN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKa-85-jNZ">
+                                        <rect key="frame" x="0.0" y="96" width="200" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="C44-aB-ECl"/>
+                                            <constraint firstAttribute="width" constant="200" id="lqs-r5-usl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                        <state key="normal" title="Medium">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="MediumMode:" destination="ZWw-XA-yJc" eventType="touchUpInside" id="XRC-47-uPM"/>
+                                            <segue destination="Xuf-JW-fQh" kind="presentation" identifier="mediummode" modalPresentationStyle="fullScreen" id="9rh-nI-Kdk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5i-5P-mhK">
+                                        <rect key="frame" x="0.0" y="192" width="200" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Z9Y-Xo-k4v"/>
+                                            <constraint firstAttribute="width" constant="200" id="kDB-LJ-D11"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="17"/>
+                                        <state key="normal" title="Easy">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="EasyMode:" destination="ZWw-XA-yJc" eventType="touchUpInside" id="AHN-Ha-yWv"/>
+                                            <segue destination="Xuf-JW-fQh" kind="presentation" identifier="easymode" modalPresentationStyle="fullScreen" id="fnJ-i2-ThB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk3-rR-orT">
+                                <rect key="frame" x="56" y="64" width="302" height="20.5"/>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRR-up-qVE">
+                                <rect key="frame" x="120" y="827" width="174" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="145" id="egP-jL-Dsv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="20"/>
+                                <state key="normal" title="Go Back">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="LM9-dC-Een"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cP8-hR-ph4"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cP8-hR-ph4" firstAttribute="trailing" secondItem="Rk3-rR-orT" secondAttribute="trailing" constant="56" id="2zz-x1-TQd"/>
+                            <constraint firstItem="Rk3-rR-orT" firstAttribute="top" secondItem="cP8-hR-ph4" secondAttribute="top" constant="20" id="EtU-4c-GLb"/>
+                            <constraint firstItem="kFE-FH-fm6" firstAttribute="centerY" secondItem="fDg-bK-WKx" secondAttribute="centerY" id="Hnp-kL-DCG"/>
+                            <constraint firstItem="kFE-FH-fm6" firstAttribute="centerX" secondItem="fDg-bK-WKx" secondAttribute="centerX" id="KJl-Ih-8pm"/>
+                            <constraint firstItem="cP8-hR-ph4" firstAttribute="trailing" secondItem="gRR-up-qVE" secondAttribute="trailing" constant="120" id="OER-fU-Ota"/>
+                            <constraint firstItem="Rk3-rR-orT" firstAttribute="centerX" secondItem="fDg-bK-WKx" secondAttribute="centerX" id="S1z-YH-NId"/>
+                            <constraint firstItem="Rk3-rR-orT" firstAttribute="leading" secondItem="cP8-hR-ph4" secondAttribute="leading" constant="56" id="alr-nU-bQI"/>
+                            <constraint firstItem="gRR-up-qVE" firstAttribute="leading" secondItem="cP8-hR-ph4" secondAttribute="leading" constant="120" id="edz-AV-1Aa"/>
+                            <constraint firstItem="gRR-up-qVE" firstAttribute="bottom" secondItem="cP8-hR-ph4" secondAttribute="bottom" id="xER-sc-SbJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHY-wP-9To" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-790" y="-1315"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="JIp-Ue-TPS">
@@ -2248,11 +2368,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1dh-wP-Gfa"/>
+        <segue reference="kek-vE-zPr"/>
+        <segue reference="Qqg-4c-mEN"/>
         <segue reference="0UY-3e-Jqi"/>
-        <segue reference="cYl-hM-UqO"/>
-        <segue reference="pV9-pV-t2w"/>
-        <segue reference="oPi-Hn-F25"/>
+        <segue reference="Vla-A4-zp1"/>
+        <segue reference="LM9-dC-Een"/>
+        <segue reference="Nh7-vF-trw"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>

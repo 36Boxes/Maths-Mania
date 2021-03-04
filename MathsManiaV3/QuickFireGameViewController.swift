@@ -68,6 +68,11 @@ class QuickFireGameViewController: UIViewController {
     
     var gameModeIsAll = false
     
+    // var for holding the Difficulty
+    
+    var Difficulty = String()
+    
+    
     // For generating random numbers
     
     var numberOne_int = Int()
@@ -182,6 +187,9 @@ class QuickFireGameViewController: UIViewController {
             enableButtons()
             AnswerBox.text = ""
             genQuestions()
+            if Difficulty == "Hard"{extraSeconds = 5}
+            if Difficulty == "Medium"{extraSeconds = 10}
+            if Difficulty == "Easy"{extraSeconds = 15}
             SecondsTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(ChangeSeconds), userInfo: nil, repeats: true)
             GameTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(checkAnswer), userInfo: nil, repeats: true)
             
@@ -219,14 +227,6 @@ class QuickFireGameViewController: UIViewController {
             QuickFireModeTitle.shakeit()}
         else if extraSeconds > 1.2 {QuickFireModeTitle.textColor = red
             QuickFireModeTitle.shakeit()}
-        else if extraSeconds < 0{
-            SecondsTimer.invalidate()
-            extraSeconds = 0
-            QuickFireModeTitle.textColor = UIColor.white
-            QuickFireModeTitle.text = String(extraSeconds)
-            
-        }
-        
         
     }
     
@@ -352,12 +352,22 @@ class QuickFireGameViewController: UIViewController {
             numberTwo_int = Int.random(in: 0..<13)
             numberOne_text = String(numberOne_int)
             numberTwo_text = String(numberTwo_int)
-        };if GameMode == "Divide"{
+        }else if GameMode == "Divide"{
             numberOne_int = Int.random(in: 1..<13)
             numberTwo_int = Int.random(in: 0..<13)
             numberOne_text = String(numberOne_int)
             numberTwo_text = String(numberTwo_int)
-        }else{
+        }else if GameMode == "Plus"{
+            firstInt = Int.random(in: 1..<10)
+            secondInt = Int.random(in: 0..<10)
+            thirdInt = Int.random(in: 1..<10)
+            fourthInt = Int.random(in: 0..<10)
+            numberOne_text = String(firstInt) + String(secondInt)
+            numberTwo_text = String(thirdInt) + String(fourthInt)
+            
+            numberOne_int = Int(numberOne_text)!
+            numberTwo_int = Int(numberTwo_text)!
+        }else if GameMode == "Minus"{
             firstInt = Int.random(in: 1..<10)
             secondInt = Int.random(in: 0..<10)
             thirdInt = Int.random(in: 1..<10)
@@ -373,17 +383,20 @@ class QuickFireGameViewController: UIViewController {
     }
   
     @objc func checkAnswer(){
-        extraSeconds -= 0.5
         let UserAnswer = Int(Answer2Question)
         if extraSeconds < 0 {
             if UserAnswer == CorrectAnswer{
-                extraSeconds += 4
+                AddSeconds()
                 AnswerBox.text = ""
                 Answer2Question = ""
                 userScore += 1
                 genQuestions()
             }else{
                 disableButtons()
+                SecondsTimer.invalidate()
+                extraSeconds = 0
+                QuickFireModeTitle.textColor = UIColor.white
+                QuickFireModeTitle.text = String(extraSeconds)
                 GameTimer.invalidate()
                 let Popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "quickfirepopup") as! QuickFirePopUp
                 let Leader = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Leaderboard") as! LeaderboardViewController
@@ -422,31 +435,35 @@ class QuickFireGameViewController: UIViewController {
                     previousHighscore = userScore
                 
                 }
-                    if highScoreBroken == true{
-                        // We want to also tell the user he has a new high score
-                        Popup.highScore = previousHighscore
-                        let highscorestr = "New High Score!"
-                        Popup.highscoreSTR = highscorestr
-                    }else{
-                        let highscorestr = "High Score"
-                        Popup.highscoreSTR = highscorestr
-                    }
-                    
-                    Popup.qFaced = QuestionFaced
+                
+                if gameModeIsAll == true{GameMode="All"}
+                
+                
+                if highScoreBroken == true{
+                    // We want to also tell the user he has a new high score
                     Popup.highScore = previousHighscore
-                    Popup.userScore = userScore
-                    self.addChild(Popup)
-                    // ensuring the popup frame is the same as the main view frame
-                    Popup.view.frame = self.view.frame
-                    //adding the popup to the view
-                    self.view.addSubview(Popup.view)
-                    Popup.didMove(toParent: self)
+                    let highscorestr = "New High Score!"
+                    Popup.highscoreSTR = highscorestr
+                }else{
+                    let highscorestr = "High Score"
+                    Popup.highscoreSTR = highscorestr
+                }
+                Popup.GameMode = GameMode
+                Popup.qFaced = QuestionFaced
+                Popup.highScore = previousHighscore
+                Popup.userScore = userScore
+                self.addChild(Popup)
+                // ensuring the popup frame is the same as the main view frame
+                Popup.view.frame = self.view.frame
+                //adding the popup to the view
+                self.view.addSubview(Popup.view)
+                Popup.didMove(toParent: self)
                 
             }
         }
         
         if UserAnswer == CorrectAnswer{
-            extraSeconds += 4
+            AddSeconds()
             Answer2Question = ""
             AnswerBox.text = ""
             userScore += 1
@@ -458,6 +475,12 @@ class QuickFireGameViewController: UIViewController {
         }
         }
         
+    }
+    
+    func AddSeconds(){
+        if Difficulty == "Hard"{extraSeconds += 4}
+        if Difficulty == "Medium"{extraSeconds += 7}
+        if Difficulty == "Easy"{extraSeconds += 10}
     }
     
     @objc func disableButtons(){

@@ -40,6 +40,10 @@ class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
     
     var GameMode = String()
     
+    // var for holding the Difficulty
+    
+    var Difficulty = String()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
