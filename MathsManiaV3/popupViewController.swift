@@ -8,8 +8,12 @@
 
 import UIKit
 import GameKit
+import GoogleMobileAds
 
 class popupViewController: UIViewController, GKGameCenterControllerDelegate{
+    
+    
+    
     func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
@@ -43,6 +47,11 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
     @IBAction func soloMode(_ sender: Any) {
     }
     override func viewDidLoad() {
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         score.text = String(userScore)
         highscored.text = String(highScore)
         qFaced.text = QFaced

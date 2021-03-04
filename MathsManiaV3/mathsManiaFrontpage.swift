@@ -60,6 +60,11 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate {
         backgroundImage.image = UIImage(named: "FrontPage")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         
         // Auth the player here so we can gen leaderboards as we enter leaderboards
         

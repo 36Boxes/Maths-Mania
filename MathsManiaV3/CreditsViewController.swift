@@ -21,6 +21,11 @@ class CreditsViewController: UIViewController {
         backgroundImage.image = UIImage(named: "Backdropsolomode")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
 

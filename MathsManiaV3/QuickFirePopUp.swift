@@ -51,6 +51,11 @@ class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
         UserScore.text = String(userScore)
         PrevioushighScore.text = String(highScore)
         QFaced.text = qFaced

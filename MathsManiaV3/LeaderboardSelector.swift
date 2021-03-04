@@ -16,6 +16,11 @@ class LeaderboardSelector: UIViewController {
         backgroundImage.image = UIImage(named: "LeaderboardBackground copy")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     @IBAction func ResetLocation(_ sender: Any) {

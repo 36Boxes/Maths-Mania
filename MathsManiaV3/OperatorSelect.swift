@@ -35,6 +35,11 @@ class OperatorSelect: UIViewController {
         backgroundImage.image = UIImage(named: "Credits")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
     // We want to pass what gamemode was selected so we filter it out via the segue
