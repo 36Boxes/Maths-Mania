@@ -8,13 +8,15 @@
 
 import UIKit
 import GameKit
-
 import MapKit
 import CoreLocation
 
 
 
-class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate {
+class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate{
+
+    
+
     
     // We set this as true as the default and then if they reject the game center login we can set it to false
     
@@ -65,6 +67,7 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate {
         } else {
             // Fallback on earlier versions
         }
+
         
         // Auth the player here so we can gen leaderboards as we enter leaderboards
         

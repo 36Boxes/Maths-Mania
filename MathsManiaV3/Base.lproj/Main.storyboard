@@ -736,7 +736,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-620" y="-421"/>
+            <point key="canvasLocation" x="-620.28985507246387" y="-421.20535714285711"/>
         </scene>
         <!--Maths Mania Solo Mode-->
         <scene sceneID="4IV-V3-zNc">
@@ -2053,7 +2053,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="46" translatesAutoresizingMaskIntoConstraints="NO" id="kFE-FH-fm6">
-                                <rect key="frame" x="72.5" y="327" width="200" height="242"/>
+                                <rect key="frame" x="107" y="327" width="200" height="242"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhy-S3-5WM">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
@@ -2121,13 +2121,13 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rk3-rR-orT">
-                                <rect key="frame" x="56" y="64" width="232.5" height="20.5"/>
+                                <rect key="frame" x="56" y="64" width="302" height="20.5"/>
                                 <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRR-up-qVE">
-                                <rect key="frame" x="120" y="827" width="104.5" height="35"/>
+                                <rect key="frame" x="120" y="827" width="174" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="145" id="egP-jL-Dsv"/>

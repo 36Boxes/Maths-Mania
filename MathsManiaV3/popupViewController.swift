@@ -65,7 +65,7 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
         mostHigh.text = high
         saveHigh(number: highScore)
         banner.rootViewController = self
-        banner.adSize = kGADAdSizeBanner
+//        banner.adSize = kGADAdSizeBanner
         view.addSubview(banner)
     }
     
