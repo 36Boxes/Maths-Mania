@@ -149,7 +149,22 @@ class QuickFireGameViewController: UIViewController {
         backgroundImage.image = UIImage(named: "Leaderboard")
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
-        if GameMode == "All"{gameModeIsAll = true}
+        if GameMode == "All"{
+            gameModeIsAll = true
+            QuickFireModeTitle.text = "Insane Mode"
+        }
+        if GameMode == "Plus"{
+            QuickFireModeTitle.text = "Addition Mode"
+        }
+        if GameMode == "Minus"{
+            QuickFireModeTitle.text = "Subtraction Mode"
+        }
+        if GameMode == "Divide"{
+            QuickFireModeTitle.text = "Division Mode"
+        }
+        if GameMode == "Multiply"{
+            QuickFireModeTitle.text = "Multiplication Mode"
+        }
         if Difficulty == "Hard"{extraSeconds = 5}
         if Difficulty == "Medium"{extraSeconds = 10}
         if Difficulty == "Easy"{extraSeconds = 15}
@@ -191,7 +206,7 @@ class QuickFireGameViewController: UIViewController {
             enableButtons()
             AnswerBox.text = ""
             genQuestions()
-            SecondsTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(ChangeSeconds), userInfo: nil, repeats: true)
+            SecondsTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(ChangeSeconds), userInfo: nil, repeats: true)
             GameTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(checkAnswer), userInfo: nil, repeats: true)
             
         }
@@ -199,7 +214,7 @@ class QuickFireGameViewController: UIViewController {
     }
     
     @objc func ChangeSeconds(){
-        extraSeconds = extraSeconds - 0.01
+        extraSeconds = extraSeconds - 0.1
         if Difficulty == "Hard"{
         if extraSeconds > 7.5{extraSeconds = 7.5}
         }
@@ -214,9 +229,9 @@ class QuickFireGameViewController: UIViewController {
         }
         let str_Seconds = String(extraSeconds)
         
-        // for some reason it doesnt like doing - 0.01 so i just get the first 4 digits instead to clean it up
+        // for some reason it doesnt like doing - 0.01 so i just get the first 3 digits instead to clean it up
         
-        QuickFireModeTitle.text = String(str_Seconds.prefix(4))
+        QuickFireModeTitle.text = String(str_Seconds.prefix(3))
         
         let darkGreen = hexStringToUIColor(hex: "#20992a")
         let darkLightGreen = hexStringToUIColor(hex: "#5ab832")
@@ -277,6 +292,8 @@ class QuickFireGameViewController: UIViewController {
         // Find the bigger number and place that first
         
         if numberOne_int > numberTwo_int{
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
             NumberOne.text = numberOne_text
             NumberTwo.text = numberTwo_text
             Operator.image = UIImage(named:"Plus")
@@ -284,6 +301,8 @@ class QuickFireGameViewController: UIViewController {
             let str_ans = String(CorrectAnswer)
             QuestionFaced = numberOne_text + " " + "+" + " " + numberTwo_text + " " + "=" + " " + str_ans
         }else{
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
             NumberOne.text = numberTwo_text
             NumberTwo.text = numberOne_text
             Operator.image = UIImage(named:"Plus")
@@ -300,6 +319,8 @@ class QuickFireGameViewController: UIViewController {
         // Find the bigger number and place that first
         
         if numberOne_int > numberTwo_int{
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
             NumberOne.text = numberOne_text
             NumberTwo.text = numberTwo_text
             Operator.image = UIImage(named:"Minus")
@@ -307,6 +328,8 @@ class QuickFireGameViewController: UIViewController {
             let str_ans = String(CorrectAnswer)
             QuestionFaced = numberOne_text + " " + "-" + " " + numberTwo_text + " " + "=" + " " + str_ans
         }else{
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
             NumberOne.text = numberTwo_text
             NumberTwo.text = numberOne_text
             Operator.image = UIImage(named:"Minus")
@@ -325,6 +348,12 @@ class QuickFireGameViewController: UIViewController {
         if numberOne_int > numberTwo_int{
             let numberThree_int = numberOne_int * numberTwo_int
             let numberThree_text = String(numberThree_int)
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
+            if numberThree_text.count == 3{
+                NumberOne.font = NumberOne.font.withSize(30)
+                NumberTwo.font = NumberTwo.font.withSize(30)
+            }
             NumberOne.text = numberThree_text
             NumberTwo.text = numberOne_text
             Operator.image = UIImage(named:"Divide")
@@ -335,6 +364,12 @@ class QuickFireGameViewController: UIViewController {
         }else{
             let numberThree_int = numberOne_int * numberTwo_int
             let numberThree_text = String(numberThree_int)
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
+            if numberThree_text.count == 3{
+                NumberOne.font = NumberOne.font.withSize(30)
+                NumberTwo.font = NumberTwo.font.withSize(30)
+            }
             NumberOne.text = numberThree_text
             NumberTwo.text = numberTwo_text
             Operator.image = UIImage(named:"Divide")
@@ -349,6 +384,8 @@ class QuickFireGameViewController: UIViewController {
         let (numberOne_text, numberTwo_text, numberOne_int, numberTwo_int) = GenRandomNumbers()
         
         if numberOne_int > numberTwo_int{
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
             NumberOne.text = numberOne_text
             NumberTwo.text = numberTwo_text
             CorrectAnswer = numberOne_int * numberTwo_int
@@ -356,6 +393,8 @@ class QuickFireGameViewController: UIViewController {
             let str_ans = String(CorrectAnswer)
             QuestionFaced = numberOne_text + " " + "x" + " " + numberTwo_text + " " + "=" + " " + str_ans
         }else{
+            NumberOne.font = NumberOne.font.withSize(50)
+            NumberTwo.font = NumberTwo.font.withSize(50)
             NumberOne.text = numberTwo_text
             NumberTwo.text = numberOne_text
             CorrectAnswer = numberOne_int * numberTwo_int
