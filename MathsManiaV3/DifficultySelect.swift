@@ -9,6 +9,9 @@
 import UIKit
 
 class DifficultySelect: UIViewController {
+    
+    var GameMode = String()
+    
     @IBAction func Hardmode(_ sender: Any) {
         performSegue(withIdentifier: "hardmode", sender: nil)
     }
@@ -21,10 +24,6 @@ class DifficultySelect: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "LeaderboardBackground copy")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -35,16 +34,19 @@ class DifficultySelect: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender : Any?){
         if segue.identifier == "hardmode"{
-            let destination = segue.destination as! OperatorSelect
+            let destination = segue.destination as! QuickFireGameViewController
             destination.Difficulty = "Hard"
+            destination.GameMode = GameMode
         }
         if segue.identifier == "mediummode"{
-            let destination = segue.destination as! OperatorSelect
+            let destination = segue.destination as! QuickFireGameViewController
             destination.Difficulty = "Medium"
+            destination.GameMode = GameMode
         }
         if segue.identifier == "easymode"{
-            let destination = segue.destination as! OperatorSelect
+            let destination = segue.destination as! QuickFireGameViewController
             destination.Difficulty = "Easy"
+            destination.GameMode = GameMode
         }
     }
     

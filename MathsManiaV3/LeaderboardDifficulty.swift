@@ -14,17 +14,89 @@ class LeaderboardDifficulty: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "Credits")
-        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
-        self.view.insertSubview(backgroundImage, at: 0)
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
-        } else {
-            // Fallback on earlier versions
+        } else {}
+        
+        // Naming our objects
+        
+        let AdditionHard = UserDefaults.standard.integer(forKey : "highscorePlusHard")
+        let AdditionMedium = UserDefaults.standard.integer(forKey : "highscorePlusMedium")
+        let AdditionEasy = UserDefaults.standard.integer(forKey : "highscorePlusEasy")
+        
+        let SubtractionHard = UserDefaults.standard.integer(forKey : "highscoreMinusHard")
+        let SubtractionMedium = UserDefaults.standard.integer(forKey : "highscoreMinusMedium")
+        let SubtractionEasy = UserDefaults.standard.integer(forKey : "highscoreMinusEasy")
+        
+        let DivisionHard = UserDefaults.standard.integer(forKey : "highscoreDivisionHard")
+        let DivisionMedium = UserDefaults.standard.integer(forKey : "highscoreDivisionMedium")
+        let DivisionEasy = UserDefaults.standard.integer(forKey : "highscoreDivisionEasy")
+        
+        let MultiplicationHard = UserDefaults.standard.integer(forKey : "highscoreMultiplyHard")
+        let MultiplicationMedium = UserDefaults.standard.integer(forKey : "highscoreMultiplyMedium")
+        let MultiplicationEasy = UserDefaults.standard.integer(forKey : "highscoreMultiplyEasy")
+        
+        
+        if GameMode == "Plus"{
+            if AdditionHard == 0 {
+                HardButton.isEnabled = false
+                HardButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if AdditionMedium == 0 {
+                MediumButton.isEnabled = false
+                MediumButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if AdditionEasy == 0 {
+                EasyButton.isEnabled = false
+                EasyButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+        }
+        if GameMode == "Minus"{
+            if SubtractionHard == 0 {
+                HardButton.isEnabled = false
+                HardButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if SubtractionMedium == 0 {
+                MediumButton.isEnabled = false
+                MediumButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if SubtractionEasy == 0 {
+                EasyButton.isEnabled = false
+                EasyButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+        }
+        if GameMode == "Divide"{
+            if DivisionHard == 0 {
+                HardButton.isEnabled = false
+                HardButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if DivisionMedium == 0 {
+                MediumButton.isEnabled = false
+                MediumButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if DivisionEasy == 0 {
+                EasyButton.isEnabled = false
+                EasyButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+        }
+        if GameMode == "Multiply"{
+            if MultiplicationHard == 0 {
+                HardButton.isEnabled = false
+                HardButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if MultiplicationMedium == 0 {
+                MediumButton.isEnabled = false
+                MediumButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
+            if MultiplicationEasy == 0 {
+                EasyButton.isEnabled = false
+                EasyButton.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+            }
         }
     }
-    
+    @IBOutlet weak var HardButton: UIButton!
+    @IBOutlet weak var MediumButton: UIButton!
+    @IBOutlet weak var EasyButton: UIButton!
     override func prepare(for segue: UIStoryboardSegue, sender : Any?){
         if segue.identifier == "hard"{
             if GameMode == "Plus"{

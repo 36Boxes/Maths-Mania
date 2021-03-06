@@ -16,7 +16,7 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
         let banner = GADBannerView()
         banner.adUnitID = "ca-app-pub-6767422419955516/1145929040"
         banner.load(GADRequest())
-        banner.backgroundColor = UIColor.systemRed
+        banner.backgroundColor = UIColor.lightGray
         return banner
     }()
     
@@ -65,7 +65,7 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
         mostHigh.text = high
         saveHigh(number: highScore)
         banner.rootViewController = self
-//        banner.adSize = kGADAdSizeBanner
+
         view.addSubview(banner)
     }
     

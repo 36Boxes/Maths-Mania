@@ -10,6 +10,12 @@ import UIKit
 
 class LeaderboardSelector: UIViewController {
 
+    @IBOutlet weak var GoBack: UIButton!
+    @IBOutlet weak var NormalAddition: UIButton!
+    @IBOutlet weak var NormalSubtraction: UIButton!
+    @IBOutlet weak var NormalMultiplication: UIButton!
+    @IBOutlet weak var NormalDivision: UIButton!
+    @IBOutlet weak var Insane: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
@@ -21,7 +27,71 @@ class LeaderboardSelector: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+
+        // Check if the total of all the highscores is 0 as then the user doesnt have a score on the leaderboard so shouldnt be able to continue
+        
+        if UserDefaults.standard.integer(forKey : "highscorePlusHard") +  UserDefaults.standard.integer(forKey : "highscorePlusMedium") + UserDefaults.standard.integer(forKey : "highscorePlusEasy") == 0{
+            NormalAddition.isEnabled = false
+            NormalAddition.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        }
+        if UserDefaults.standard.integer(forKey : "highscoreMinusHard") +  UserDefaults.standard.integer(forKey : "highscoreMinusMedium") + UserDefaults.standard.integer(forKey : "highscoreMinusEasy") == 0{
+            NormalSubtraction.isEnabled = false
+            NormalSubtraction.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        }
+        if UserDefaults.standard.integer(forKey : "highscoreMultiplyHard") +  UserDefaults.standard.integer(forKey : "highscoreMultiplyMedium") + UserDefaults.standard.integer(forKey : "highscoreMultiplyEasy") == 0{
+            NormalMultiplication.isEnabled = false
+            NormalMultiplication.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        }
+        if UserDefaults.standard.integer(forKey : "highscoreDivisionHard") +  UserDefaults.standard.integer(forKey : "highscoreDivisionMedium") + UserDefaults.standard.integer(forKey : "highscoreDivisionEasy") == 0{
+            NormalDivision.isEnabled = false
+            NormalDivision.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        }
+        if UserDefaults.standard.integer(forKey : "highscoreAllHard")  == 0{
+            Insane.isEnabled = false
+            Insane.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
+        }
     }
+    
+    @IBAction func Addition(_ sender: UIButton) {
+        GoBack.isHidden = true
+        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "leaderboarddiff") as! LeaderboardDifficulty
+        popup.GameMode = "Plus"
+        self.addChild(popup)
+        popup.view.frame = self.view.frame
+        self.view.addSubview(popup.view)
+        popup.didMove(toParent: self)
+    }
+    
+    @IBAction func Subtraction(_ sender: UIButton) {
+        GoBack.isHidden = true
+        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "leaderboarddiff") as! LeaderboardDifficulty
+        popup.GameMode = "Minus"
+        self.addChild(popup)
+        popup.view.frame = self.view.frame
+        self.view.addSubview(popup.view)
+        popup.didMove(toParent: self)
+    }
+    
+    @IBAction func Multiplication(_ sender: Any) {
+        GoBack.isHidden = true
+        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "leaderboarddiff") as! LeaderboardDifficulty
+        popup.GameMode = "Multiply"
+        self.addChild(popup)
+        popup.view.frame = self.view.frame
+        self.view.addSubview(popup.view)
+        popup.didMove(toParent: self)
+    }
+    
+    @IBAction func Division(_ sender: Any) {
+        GoBack.isHidden = true
+        let popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "leaderboarddiff") as! LeaderboardDifficulty
+        popup.GameMode = "Divide"
+        self.addChild(popup)
+        popup.view.frame = self.view.frame
+        self.view.addSubview(popup.view)
+        popup.didMove(toParent: self)
+    }
+    
     
     @IBAction func ResetLocation(_ sender: Any) {
         let Locationpopup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "locationpopup") as! LocationPopupViewController
@@ -38,25 +108,10 @@ class LeaderboardSelector: UIViewController {
             let destination = segue.destination as! LeaderboardViewController
             destination.LeaderboardIdentifier = "Scores"
         }
-        if segue.identifier == "addition"{
-            let destination = segue.destination as! LeaderboardDifficulty
-            destination.GameMode = "Plus"
-        }
-        if segue.identifier == "subtraction"{
-            let destination = segue.destination as! LeaderboardDifficulty
-            destination.GameMode = "Minus"
-        }
-        if segue.identifier == "division"{
-            let destination = segue.destination as! LeaderboardDifficulty
-            destination.GameMode = "Divide"
-        }
-        if segue.identifier == "multiplication"{
-            let destination = segue.destination as! LeaderboardDifficulty
-            destination.GameMode = "Multiply"
-        }
+
         if segue.identifier == "all"{
-            let destination = segue.destination as! LeaderboardDifficulty
-            destination.GameMode = "All"
+            let destination = segue.destination as! LeaderboardViewController
+            destination.LeaderboardIdentifier = "NormalAllHard"
         }
     }
 

@@ -153,6 +153,7 @@ class QuickFireGameViewController: UIViewController {
         if Difficulty == "Hard"{extraSeconds = 5}
         if Difficulty == "Medium"{extraSeconds = 10}
         if Difficulty == "Easy"{extraSeconds = 15}
+        if Difficulty == "Insane"{extraSeconds = 4}
         disableButtons()
     }
     
@@ -207,6 +208,9 @@ class QuickFireGameViewController: UIViewController {
         }
         if Difficulty == "Easy"{
             if extraSeconds > 17{extraSeconds = 17}
+        }
+        if Difficulty == "Insane"{
+            if extraSeconds > 3{extraSeconds = 3}
         }
         let str_Seconds = String(extraSeconds)
         
@@ -417,6 +421,7 @@ class QuickFireGameViewController: UIViewController {
             }else{
                 disableButtons()
                 GameTimer.invalidate()
+                if gameModeIsAll == true{GameMode="All"}
                 let Popup = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "quickfirepopup") as! QuickFirePopUp
                 let Leader = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Leaderboard") as! LeaderboardViewController
                 if GameMode == "Plus"{
@@ -440,9 +445,7 @@ class QuickFireGameViewController: UIViewController {
                     if Difficulty == "Easy"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreMultiplyEasy")}
                 }
                 if GameMode == "All"{
-                    if Difficulty == "Hard"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAllHard")}
-                    if Difficulty == "Medium"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAllMedium")}
-                    if Difficulty == "Easy"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAllEasy")}
+                    if Difficulty == "Insane"{previousHighscore = UserDefaults.standard.integer(forKey : "highscoreAllHard")}
                 }
                 
                 if userScore > previousHighscore{
@@ -503,17 +506,9 @@ class QuickFireGameViewController: UIViewController {
                         }
                     }
                     if GameMode == "All"{
-                        if Difficulty == "Hard"{
+                        if Difficulty == "Insane"{
                             UserDefaults.standard.set(userScore, forKey: "highscoreAllHard")
                             Leader.highScoreAllHard = UserDefaults.standard.integer(forKey : "highscoreAllHard")
-                        }
-                        if Difficulty == "Medium"{
-                            UserDefaults.standard.set(userScore, forKey: "highscoreAllMedium")
-                            Leader.highScoreAllMedium = UserDefaults.standard.integer(forKey : "highscoreAllMedium")
-                        }
-                        if Difficulty == "Easy"{
-                            UserDefaults.standard.set(userScore, forKey: "highscoreAllEasy")
-                            Leader.highScoreAllEasy = UserDefaults.standard.integer(forKey : "highscoreAllEasy")
                         }
                     }
                     
@@ -525,7 +520,7 @@ class QuickFireGameViewController: UIViewController {
                 
                 }
                 
-                if gameModeIsAll == true{GameMode="All"}
+                
                 
                 
                 if highScoreBroken == true{
@@ -571,6 +566,7 @@ class QuickFireGameViewController: UIViewController {
         if Difficulty == "Hard"{extraSeconds += 4}
         if Difficulty == "Medium"{extraSeconds += 7}
         if Difficulty == "Easy"{extraSeconds += 10}
+        if Difficulty == "Insane"{extraSeconds += 3}
     }
     
     @objc func disableButtons(){
