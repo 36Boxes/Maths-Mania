@@ -65,7 +65,6 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
         mostHigh.text = high
         saveHigh(number: highScore)
         banner.rootViewController = self
-
         view.addSubview(banner)
     }
     

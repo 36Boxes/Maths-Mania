@@ -713,8 +713,8 @@
                                                     <constraint firstAttribute="width" constant="115" id="KMV-cV-yMO"/>
                                                     <constraint firstAttribute="height" constant="35" id="pmy-df-pZ8"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="14"/>
-                                                <state key="normal" title="Support Me!">
+                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="12"/>
+                                                <state key="normal" title="Watch an AD!">
                                                     <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -723,7 +723,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <action selector="Credits:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wpr-MD-EOg"/>
+                                                    <action selector="WatchAnAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BPD-1b-ogx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-ac-gEO">
@@ -2708,12 +2708,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FJ8-pz-gTV"/>
+        <segue reference="t0v-gI-xCr"/>
         <segue reference="6ZA-ay-NZE"/>
-        <segue reference="cYl-hM-UqO"/>
+        <segue reference="Vla-A4-zp1"/>
         <segue reference="0qa-ft-clo"/>
         <segue reference="5Ox-w5-Zad"/>
-        <segue reference="hze-tM-f9M"/>
+        <segue reference="UxQ-fb-clt"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.38348116799999998" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
     <resources>

@@ -9,13 +9,13 @@
 import UIKit
 import GameKit
 import MapKit
-import CoreLocation
+import GoogleMobileAds
 
 
 
-class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate{
+class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate, GADFullScreenContentDelegate{
 
-    
+    private var interstitial: GADInterstitialAd?
 
     
     // We set this as true as the default and then if they reject the game center login we can set it to false
@@ -53,6 +53,13 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate{
         performSegue(withIdentifier: "operatorselect", sender: nil)
     }
     
+    @IBAction func WatchAnAd(_ sender: Any) {
+        if interstitial != nil {
+            interstitial!.present(fromRootViewController: self)
+        } else {
+          print("Ad wasn't ready")
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -67,6 +74,19 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate{
         } else {
             // Fallback on earlier versions
         }
+        
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:"ca-app-pub-6767422419955516/3438680776",
+                                    request: request,
+                          completionHandler: { [self] ad, error in
+                            if let error = error {
+                              print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                              return
+                            }
+                            interstitial = ad
+                            interstitial?.fullScreenContentDelegate = self
+                          }
+        )
 
         
         // Auth the player here so we can gen leaderboards as we enter leaderboards
@@ -82,6 +102,8 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate{
             // if they dont dont show view and log they are not in gamecenter
             else {self.GameCenterPlayer = false}
         }}
+    
+
     
 }
 

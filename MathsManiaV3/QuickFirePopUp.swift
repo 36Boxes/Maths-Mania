@@ -8,6 +8,7 @@
 
 import UIKit
 import GameKit
+import GoogleMobileAds
 
 class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
     
@@ -48,6 +49,14 @@ class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
     
     var scoreReporter = GKScore()
     
+    private let banner: GADBannerView = {
+        let banner = GADBannerView()
+        banner.adUnitID = "ca-app-pub-6767422419955516/1145929040"
+        banner.load(GADRequest())
+        banner.backgroundColor = UIColor.lightGray
+        return banner
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +70,8 @@ class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
         QFaced.text = qFaced
         highscoreStr.text = highscoreSTR
         saveHigh(number: highScore)
+        banner.rootViewController = self
+        view.addSubview(banner)
     }
     
 
@@ -101,5 +112,10 @@ class QuickFirePopUp: UIViewController, GKGameCenterControllerDelegate {
     @IBAction func mainMenu(_ sender: UIButton) {
     }
     @IBAction func leaderboards(_ sender: UIButton) {
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        banner.frame = CGRect(x:0, y: view.frame.size.height-50, width: view.frame.size.width, height: 50)
     }
 }

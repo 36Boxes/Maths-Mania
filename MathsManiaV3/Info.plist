@@ -25,7 +25,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Allow access as it is for localising the leaderboard to see if you are the best in your county!</string>
+	<string>It is for localising the leaderboard to see if you are the best in your county!</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>ADAM.CG PRO.otf</string>
