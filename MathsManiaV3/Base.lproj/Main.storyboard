@@ -705,35 +705,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="iRF-mQ-IwI">
                                         <rect key="frame" x="0.0" y="210" width="250" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IiX-Qv-Occ">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="35"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="1Cd-1b-oHh"/>
-                                                    <constraint firstAttribute="width" constant="115" id="KMV-cV-yMO"/>
-                                                    <constraint firstAttribute="height" constant="35" id="pmy-df-pZ8"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="12"/>
-                                                <state key="normal" title="Watch an AD!">
-                                                    <color key="titleColor" systemColor="darkTextColor"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <action selector="WatchAnAd:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BPD-1b-ogx"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-ac-gEO">
-                                                <rect key="frame" x="135" y="0.0" width="115" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="35"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="aA7-7f-kjq"/>
                                                     <constraint firstAttribute="width" constant="115" id="uYC-Ts-Dfq"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="ADAM.CGPRO" family="ADAM.CG PRO" pointSize="19"/>
                                                 <state key="normal" title="credits">
                                                     <color key="titleColor" systemColor="darkTextColor"/>
                                                 </state>
@@ -2708,7 +2687,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kpK-Jm-Rqz"/>
+        <segue reference="t0v-gI-xCr"/>
         <segue reference="6ZA-ay-NZE"/>
         <segue reference="Vla-A4-zp1"/>
         <segue reference="0qa-ft-clo"/>

@@ -53,13 +53,7 @@ class mathsManiaFrontpage: UIViewController, GKGameCenterControllerDelegate, GAD
         performSegue(withIdentifier: "operatorselect", sender: nil)
     }
     
-    @IBAction func WatchAnAd(_ sender: Any) {
-        if interstitial != nil {
-            interstitial!.present(fromRootViewController: self)
-        } else {
-          print("Ad wasn't ready")
-        }
-    }
+
     
     
     override func viewDidLoad() {
