@@ -42,7 +42,7 @@ class LeaderboardSelector: UIViewController {
             NormalMultiplication.isEnabled = false
             NormalMultiplication.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
         }
-        if UserDefaults.standard.integer(forKey : "highscoreDivisionHard") +  UserDefaults.standard.integer(forKey : "highscoreDivisionMedium") + UserDefaults.standard.integer(forKey : "highscoreDivisionEasy") == 0{
+        if UserDefaults.standard.integer(forKey : "highscoreDivideHard") +  UserDefaults.standard.integer(forKey : "highscoreDivideMedium") + UserDefaults.standard.integer(forKey : "highscoreDivideEasy") == 0{
             NormalDivision.isEnabled = false
             NormalDivision.setTitleColor(UIColor.lightGray, for: UIControl.State.disabled)
         }

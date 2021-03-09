@@ -28,9 +28,9 @@ class LeaderboardDifficulty: UIViewController {
         let SubtractionMedium = UserDefaults.standard.integer(forKey : "highscoreMinusMedium")
         let SubtractionEasy = UserDefaults.standard.integer(forKey : "highscoreMinusEasy")
         
-        let DivisionHard = UserDefaults.standard.integer(forKey : "highscoreDivisionHard")
-        let DivisionMedium = UserDefaults.standard.integer(forKey : "highscoreDivisionMedium")
-        let DivisionEasy = UserDefaults.standard.integer(forKey : "highscoreDivisionEasy")
+        let DivisionHard = UserDefaults.standard.integer(forKey : "highscoreDivideHard")
+        let DivisionMedium = UserDefaults.standard.integer(forKey : "highscoreDivideMedium")
+        let DivisionEasy = UserDefaults.standard.integer(forKey : "highscoreDivideEasy")
         
         let MultiplicationHard = UserDefaults.standard.integer(forKey : "highscoreMultiplyHard")
         let MultiplicationMedium = UserDefaults.standard.integer(forKey : "highscoreMultiplyMedium")

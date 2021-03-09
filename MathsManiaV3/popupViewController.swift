@@ -81,5 +81,14 @@ class popupViewController: UIViewController, GKGameCenterControllerDelegate{
         super.viewDidLayoutSubviews()
         banner.frame = CGRect(x:0, y: view.frame.size.height-50, width: view.frame.size.width, height: 50)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender : Any?){
+        if segue.identifier == "showleaderboards"{
+            let destination = segue.destination as! LeaderboardViewController
+            destination.LeaderboardIdentifier = "Scores"
+            
+        }
+        
+    }
 
 }

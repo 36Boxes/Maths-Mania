@@ -30,8 +30,6 @@ class LocationPopupViewController: UIViewController, GKGameCenterControllerDeleg
         gameCenterViewController.dismiss(animated: true, completion: nil)
     }
     @IBAction func skip(_ sender: Any) {
-        performSegue(withIdentifier: "location_figured_out", sender: nil)
-        location_calculated = true
     }
     
     @IBOutlet weak var popupbutton: UIButton!
